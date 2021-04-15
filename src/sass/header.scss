@@ -1,7 +1,7 @@
-.header {
-  padding-top: 50px;
-  padding-bottom: 100px;
-  margin-bottom: 20px;
+.header{
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
 }
 
 .header-nav {
@@ -11,3 +11,10 @@
 .header-nav-list {
   display: flex;
 }
+.logo, .nav{
+  display: flex;
+  justify-content: left;
+  margin: auto 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  }
