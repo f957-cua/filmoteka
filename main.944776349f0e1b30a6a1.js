@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{"0HMw":function(n,e,c){},QfWi:function(n,e,c){"use strict";c.r(e);c("JBxO"),c("FdtR"),c("0HMw");fetch("https://api.tmdb.org/3/search/movie?api_key=1a7532c831c19ca759402dbd11644ca2&language=en-US&page=1&include_adult=false&query=club").then((function(n){return n.json()})).then((function(n){console.log(n.results)}))}},[["QfWi",1,2]]]);
-//# sourceMappingURL=main.944776349f0e1b30a6a1.js.map
