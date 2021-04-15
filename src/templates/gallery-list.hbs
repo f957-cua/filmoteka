@@ -1,15 +1,9 @@
 {{#each this}}
-<li class="gallery__card">
-  <div class="gallery__image-wrapper">
-    <img loading="lazy" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{original_title}}"
-      class="gallery__image" />
-  </div>
-  <div class="gallery__description">
-    <h3 class="gallery__title">
-      {{original_title}}
-    </h3>
-    <span class="gallery__release-date">
-      {{release_date}}</span>
-  </div>
+<li class="photo-card">
+  <img loading="lazy" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt={{original_title}} width="320"
+    height="auto">
+  <h2> {{original_title}} </h2>
+  <h3> Release date {{release_date}} </h3>
+  <h4>Rating: {{vote_average}}</h4>
 </li>
 {{/each}}
