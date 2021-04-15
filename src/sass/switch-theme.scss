@@ -11,36 +11,63 @@ color: #fff;
 .button__icon {
 margin-right: 8px;
 } 
-.buttons{
+.switch{
 display: flex;
-justify-content: flex-end;
+justify-content: right; 
+
 align-items: baseline;
+@media screen and (min-width: 320px) {
+    justify-content: right;  }
+@media screen and (min-width: 480px) {
+      justify-content: flex-end; 
+    }
+    
 }
 .btn-submit{
-outline: 1px solid orangered;
-position: absolute;
-top: 10%;
-right: 20%;
+  outline: 1px solid orangered;
+  position: absolute;
+  top: 10%;
+  right: 20%;
 }    
 
 .theme-switch {
-display: inline-flex;
-align-items: center;
+  display: inline-flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  position: absolute;
+  top: 60px;
+  right:8%;
+  @media screen and (min-width: 481px) {
+    top: 70px;
+  }
+
+  @media screen and(min-width:768px){
+    top:97px;
+    right: 10%;
+  }
 }
 
 .theme-switch__icon {
-color: orangered;
-height: 24px;
-width: 24px;
-margin-right: 8px;
-margin-left: 8px;
+  color: orangered;
+  width: 12px;
+  height: 12px;
+  margin-right: 3px;
+  margin-left: 3px;
+
+@media screen and (min-width: 768px) {
+  height: 22px;
+  width: 22px;
+  margin-right: 8px;
+  margin-left: 8px;
+
+}
 }
 .theme-switch__logo{
 color: orangered;
-height: 24px;
-width: 24px;
-margin-right: 8px;
-margin-left: 8px;
+height: 22px;
+width: 22px;
+margin-right: 5px;
+margin-left: 5px;
 }
 
 .theme-switch__control {
@@ -48,10 +75,18 @@ display: flex;
 align-items: center;
 flex-shrink: 0;
 position: relative;
-width: 64px;
-height: 32px;
 border-radius: 50em;
 padding: 3px 0;
+
+@media screen and (min-width: 320px) {
+width: 32px;
+height: 14px;
+}
+
+@media screen and (min-width: 768px) {
+width: 60px;
+height: 26px;
+}
 }
 
 .theme-switch__toggle {
@@ -83,25 +118,46 @@ cursor: pointer;
 .theme-switch__marker {
 position: relative;
 background-color: #fff;
-width: 26px;
-height: 26px;
+width: 10px;
+height: 14px;
 border-radius: 50%;
 z-index: 2;
 pointer-events: none;
 box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-transform: translateX(3px);
+transform: translate(1px, 0px);
 transition: transform 250ms var(--timing-function);
+@media screen and (min-width: 320px) {
+  width: 50%;
 }
 
-.theme-switch__toggle:checked + .theme-switch__track {
-background-color: grey;
+@media screen and (min-width: 768px) {
+  width: 26px;
+  height: 26px;
 }
-.theme-switch__toggle:checked  .theme-switch__icon {
-color: tomato;
+}
+
+//*при переключении на темную тему:
+.theme-switch__toggle:checked + .theme-switch__track{
+  background-color: grey;
+}
+body.dark-theme .input-search, body.dark-theme .input-search:focus, body.dark-theme .input-search:hover {
+  background-color: #333333;
+  color: #fff
+}
+body.dark-theme  .btn-submit {
+  background-color: #333333;
 }
 
 .theme-switch__toggle:checked ~ .theme-switch__marker {
-transform: translateX(35px);
+// transform: translateX(35px);
+color: #fff;
+@media screen and (min-width: 320px) {
+  transform: translateX(15px);
+}
+
+@media screen and (min-width: 768px) {
+  transform: translateX(35px);
+}
 }
 
 .theme-switch__toggle:focus + .theme-switch__track,
