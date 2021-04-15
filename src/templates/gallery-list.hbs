@@ -1,6 +1,15 @@
-{{#each}}
-<img src="" alt="">
-<h2>{{title}} </h2>
-<h3>{{genre_ids}} | {{release_date}} </h3>
-<h4>{{vote_average}} </h4>
+{{#each this}}
+<li class="gallery__card">
+  <div class="gallery__image-wrapper">
+    <img loading="lazy" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{original_title}}"
+      class="gallery__image" />
+  </div>
+  <div class="gallery__description">
+    <h3 class="gallery__title">
+      {{original_title}}
+    </h3>
+    <span class="gallery__release-date">
+      {{release_date}}</span>
+  </div>
+</li>
 {{/each}}
