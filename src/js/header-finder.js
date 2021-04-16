@@ -5,6 +5,9 @@ let searchQuery = ''
 
 const onSearchSubmit = e => {
   e.preventDefault();
+  if (e.target[0].value.trim() === '') {
+    return
+  }
   searchQuery = e.target[0].value;
   e.target[0].value = '';
   apiService.getBySearchQuery(searchQuery).then(({ results }) => {
