@@ -11,6 +11,7 @@ const onSearchSubmit = e => {
   searchQuery = e.target[0].value;
   e.target[0].value = '';
   apiService.getBySearchQuery(searchQuery).then(({ results }) => {
+    console.log(results);
     refs.gallery.innerHTML = galleryHbs(results);
   })
 }
