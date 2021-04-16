@@ -8,12 +8,15 @@
   height: 32px;
   // background: url(https://snipp.ru/img/scroll_top.png) 50% 50% no-repeat;
   background: url(../images/circle-up.svg) 50% 50% no-repeat;
-  background-color: red;
+  background-color: orangered;
   border-radius: 50%;
   opacity: 0.5;
 }
 #scroll_top:hover {
   opacity: 1;
-  background: rebeccapurple;
   background: url(../images/circle-up.svg) 50% 50% no-repeat;
+}
+
+body.dark-theme #scroll_top:hover {
+  background-color: white;
 }
