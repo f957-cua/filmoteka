@@ -10,3 +10,4 @@ const onLogoClick = e => {
 };
 
 refs.logo.addEventListener('click', onLogoClick);
+refs.home.addEventListener('click', onLogoClick);
