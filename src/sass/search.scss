@@ -4,7 +4,7 @@
     justify-content: center;
     }
     
-    .input-search{
+.input-search{
     position: relative;
     
     display: inline-block;
@@ -14,5 +14,14 @@
     border-bottom:1px solid black;
     margin-top: 20px;
     margin-bottom: 20px;
-    }
+}
+.btn-submit{
+    border: none;
+    padding: 2px 4px;
+    background-color: inherit;
+    outline: 1px solid orangered;
+    position: absolute;
+    top: 12%;
+    right: 20%;
+}
     

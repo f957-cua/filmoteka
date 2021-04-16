@@ -1,8 +1,12 @@
 .header{
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: baseline;
-}
+  @media screen and (min-width: 481px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }}
 
 .header-nav {
   display: flex;
@@ -13,8 +17,12 @@
 }
 .logo, .nav{
   display: flex;
-  justify-content: left;
+  justify-content:space-around;
   margin: auto 0;
   text-transform: uppercase;
   font-weight: bold;
-  }
+}
+.logo>a{
+  margin-top: auto;
+  margin-bottom: auto;
+}
