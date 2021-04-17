@@ -12,10 +12,19 @@ export default {
     const url = `${MAIN_URL}trending/all/day?api_key=${KEY}&page=${this.page}`;
     return fetch(url).then(response => response.json());
   },
+
   getBySearchQuery(searchQuery) {
     const url = `${MAIN_URL}search/movie?api_key=${KEY}&language=en-US&page=${this.page}&query=${searchQuery}`;
     return fetch(url).then(response => response.json());
   },
+  getByPopular() {
+    const url = `${MAIN_URL}movie/popular?api_key=${KEY}&language=en-US&page=${this.page}`;
+    return fetch(url).then(response => response.json());
+  },
+  getByTopRated() {
+    const url = `${MAIN_URL}movie/top_rated?api_key=${KEY}&language=en-US&page=${this.page}`;
+    return fetch(url).then(response => response.json());
+  }, 
   incrementPage() {
     return this.page += 1;
   },
