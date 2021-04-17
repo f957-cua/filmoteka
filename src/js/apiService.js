@@ -10,6 +10,14 @@ export default {
     const url = `${MAIN_URL}trending/all/day?api_key=${KEY}`;
     return fetch(url).then(response => response.json());
   },
+  getByPopular(page = 1) {
+    const url = `${MAIN_URL}movie/popular?api_key=${KEY}&language=en-US&page=${page}`;
+    return fetch(url).then(response => response.json());
+  },
+  getByTopRated(page = 1) {
+    const url = `${MAIN_URL}movie/top_rated?api_key=${KEY}&language=en-US&page=${page}`;
+    return fetch(url).then(response => response.json());
+  },
   getBySearchQuery(searchQuery, page = 1) {
     const url = `${MAIN_URL}search/movie?api_key=${KEY}&language=en-US&page=${page}&query=${searchQuery}`;
     return fetch(url).then(response => response.json());
