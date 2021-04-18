@@ -5,5 +5,6 @@ import './js/gallery';
 import './js/gallery-section-filter';
 import './js/up-button';
 import './js/galeery-pagination';
+import './js/modal';
 
 import '../src/sass/main.scss';
