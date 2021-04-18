@@ -51,6 +51,8 @@
   "dependencies": {
     "bootstrap": "^5.0.0-beta3",
     "core-js": "^3.6.5",
+    "firebase": "^8.4.1",
+    "firebaseui": "^4.8.0",
     "handlebars": "^4.7.6",
     "jquery": "^3.6.0"
   }
