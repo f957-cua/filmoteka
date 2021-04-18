@@ -40,7 +40,12 @@ function onTrendPrevBtnClick() {
     apiService.decrementPage()
     apiService.getByTrend().then(({ results }) => {
     refs.gallery.innerHTML = galleryHbs(results);
-  })
+    })
+  window.scrollTo({
+  top: 0,
+  left: 0,
+  behavior: 'smooth'
+});
 }
 
 function onTrendNextBtnClick() {
@@ -48,6 +53,11 @@ function onTrendNextBtnClick() {
     apiService.getByTrend().then(({ results }) => {
     refs.gallery.innerHTML = galleryHbs(results);
   })
+  window.scrollTo({
+  top: 0,
+  left: 0,
+  behavior: 'smooth'
+});
  }
 
 function onSearchPrevBtnClick() {
@@ -55,38 +65,69 @@ function onSearchPrevBtnClick() {
     apiService.getBySearchQuery().then(({ results }) => {
     refs.gallery.innerHTML = galleryHbs(results);
   })
+  window.scrollTo({
+  top: 0,
+  left: 0,
+  behavior: 'smooth'
+});
 }
 
 function onSearchNextBtnClick() {
     apiService.incrementPage()
     apiService.getBySearchQuery().then(({ results }) => {
     refs.gallery.innerHTML = galleryHbs(results);
-  })
+    })
+  window.scrollTo({
+  top: 0,
+  left: 0,
+  behavior: 'smooth'
+});
+  
 }
 
 function onPopularPrevBtnClick() {
     apiService.decrementPage()
     apiService.getByPopular().then(({ results }) => {
     refs.gallery.innerHTML = galleryHbs(results);
-  });
+    });
+  window.scrollTo({
+  top: 0,
+  left: 0,
+  behavior: 'smooth'
+});
 }
 
 function onPopularNextBtnClick() {
     apiService.incrementPage()
     apiService.getByPopular().then(({ results }) => {
     refs.gallery.innerHTML = galleryHbs(results);
-  });
+    });
+  window.scrollTo({
+  top: 0,
+  left: 0,
+  behavior: 'smooth'
+});
 }
 function onTopRatedPrevBtnClick() {
     apiService.decrementPage()
     apiService.getByTopRated().then(({ results }) => {
     refs.gallery.innerHTML = galleryHbs(results);
-  });
+    });
+  window.scrollTo({
+  top: 0,
+  left: 0,
+  behavior: 'smooth'
+});
 }
 
 function onTopRatedNextBtnClick() {
     apiService.incrementPage()
     apiService.getByTopRated().then(({ results }) => {
     refs.gallery.innerHTML = galleryHbs(results);
-  });
+    });
+  window.scrollTo({
+  top: 0,
+  left: 0,
+  behavior: 'smooth'
+});
 }
