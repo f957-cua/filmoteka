@@ -6,7 +6,11 @@
 @import 'header.scss';
 @import 'nav.scss';
 @import 'switch-theme.scss';
+@import 'slider.scss';
 @import 'search.scss';
 @import 'gallery.scss';
 @import 'footer.scss';
 @import 'up-button.scss';
+
+@import '../../node_modules/@glidejs/glide/src/assets/sass/glide.theme';
+@import '../../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
