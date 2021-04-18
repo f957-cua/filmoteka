@@ -14,6 +14,13 @@ export default {
     const url = `${MAIN_URL}search/movie?api_key=${KEY}&language=en-US&page=${page}&query=${searchQuery}`;
     return fetch(url).then(response => response.json());
   },
+   getUpcoming(pageNum = 1) {
+    const url = `${MAIN_URL}movie/upcoming?api_key=${KEY}&language=en-US&page=${pageNum}`;
+    return fetch(url).then(response => response.json())
+    
+  },
+
+
   incrementPage(page) {
     page += 1;
   },
@@ -21,3 +28,6 @@ export default {
     page -= 1;
   },
 };
+
+
+
