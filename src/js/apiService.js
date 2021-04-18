@@ -29,8 +29,16 @@ export default {
     const url = `${MAIN_URL}movie/top_rated?api_key=${KEY}&language=en-US&page=${this.page}`;
     return fetch(url).then(response => response.json());
   },
+  getUpcoming(pageNum = 1) {
+    const url = `${MAIN_URL}movie/upcoming?api_key=${KEY}&language=en-US&page=${pageNum}`;
+    return fetch(url).then(response => response.json());
+  },
+
+
+
   incrementPage() {
     return this.page += 1;
+
   },
   decrementPage() {
     if (this.page === 1) {
@@ -39,3 +47,6 @@ export default {
     return this.page -= 1;
   },
 };
+
+
+
