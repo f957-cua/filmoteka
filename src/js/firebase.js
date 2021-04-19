@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/auth";
-import * as firebaseui from 'firebaseui';
+import * as firebaseUi from 'firebaseui';
 
 const firebaseConfig = {
     apiKey: "AIzaSyDCrVa6zpkJN0MnC22HGNcfi7vaIe8Op8M",
@@ -16,7 +16,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 firebase.auth();
-const ui = new firebaseui.auth.AuthUI(firebase.auth());
+const ui = new firebaseUi.auth.AuthUI(firebase.auth());
 
 const uiConfig = {
   callbacks: {
@@ -34,7 +34,7 @@ const uiConfig = {
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'popup',
-  signInSuccessUrl: '<url-to-redirect-to-on-success>',
+  signInSuccessUrl: '/',
   signInOptions: [
     // Leave the lines as is for the providers you want to offer your users.
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -43,9 +43,9 @@ const uiConfig = {
     firebase.auth.EmailAuthProvider.PROVIDER_ID,
   ],
   // Terms of service url.
-  tosUrl: '<your-tos-url>',
+  tosUrl: 'https://www.termsfeed.com/live/6606e203-ca11-437b-b584-e1765cda9c0e>',
   // Privacy policy url.
-  privacyPolicyUrl: '<your-privacy-policy-url>'
+  privacyPolicyUrl: 'https://www.privacypolicies.com/live/5a40fc7e-8fd2-4cd0-8754-e6ebf6281fb4'
 };
 const initApp = function() {
         firebase.auth().onAuthStateChanged(function(user) {
