@@ -1,20 +1,20 @@
 body.light-theme {
   background-color: #fff;
-  // background-image: url(../images/white-theme-bg.jpg);
-  background-image: url(../images/white-theme.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-image: url(../images/white-theme-bg.jpg);
+  // background-image: url(../images/white-theme.jpeg);
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center;
   color: #333333;
 }
 
 body.dark-theme {
   background-color: #000;
-  // background-image: url(../images/black-theme-bg.jpg);
-  background-image: url(../images/dark-theme.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../images/black-theme-bg.jpg);
+  // background-image: url(../images/dark-theme.jpeg);
+  // background-size: contain;
+  // background-repeat: no-repeat;
+  // background-position: center;
   color: #fff;
 }
 
