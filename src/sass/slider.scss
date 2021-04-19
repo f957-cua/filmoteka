@@ -6,6 +6,11 @@
     display: none;
   }
 }
+
+.container-slider {
+  margin: 0 auto;
+  width: 920px;
+}
 .thumb {
   position: relative;
 }
@@ -33,33 +38,14 @@
 
 .card-slider {
   margin-right: 8px;
+  width: 123.203px;
+}
+.card-slider:hover {
+  transform: scale(1.2, 1.25);
 }
 
 .slider-img {
   border-radius: 6px;
-}
-
-.card-slider .btn-overlay-text {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 19px;
-  width: 70px;
-
-  pointer-events: none;
-  font-family: 'Roboto', sans-serif;
-
-  background-color: rgba(255, 255, 255, 0.8);
-
-  border-radius: 5px;
-  left: 50%;
-  z-index: 2;
-  opacity: 0;
-
-  transform: translate(-50%, 0);
-  transition: all 800ms ease-in;
 }
 
 img {
