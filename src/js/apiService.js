@@ -1,4 +1,4 @@
-import refs from './refs';
+
 
 const KEY = '1a7532c831c19ca759402dbd11644ca2';
 const MAIN_URL = 'https://api.themoviedb.org/3/';
@@ -31,17 +31,19 @@ export default {
   },
   
   getById(id) {
-    // return fetch(`${MAIN_URL}/movie/${id}/external_ids?api_key=${KEY}`)
-    //   .then(resp => resp.json())
-    //   // .then(resp => { console.log(resp);})
-    //   .then(resp => {
-        const url = `${MAIN_URL}movie/${id}?api_key=${KEY}&language=en-US`    
-        return fetch(url).then(response => response.json());
+    const url = `${MAIN_URL}movie/${id}?api_key=${KEY}&language=en-US`    
+    return fetch(url).then(response => response.json());
 
+  },
+
+  getUpcoming() {
+    const url = `${MAIN_URL}movie/upcoming?api_key=${KEY}&language=en-US&page=${this.page}`;
+    return fetch(url).then(response => response.json());
   },
 
   incrementPage() {
     return this.page += 1;
+
   },
   decrementPage() {
     if (this.page === 1) {
