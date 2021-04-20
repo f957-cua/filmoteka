@@ -29,11 +29,17 @@ export default {
     const url = `${MAIN_URL}movie/top_rated?api_key=${KEY}&language=en-US&page=${this.page}`;
     return fetch(url).then(response => response.json());
   },
+  
+  getById(id) {
+    const url = `${MAIN_URL}movie/${id}?api_key=${KEY}&language=en-US`    
+    return fetch(url).then(response => response.json());
+
+  },
+
   getUpcoming() {
     const url = `${MAIN_URL}movie/upcoming?api_key=${KEY}&language=en-US&page=${this.page}`;
     return fetch(url).then(response => response.json());
   },
-
 
   incrementPage() {
     return this.page += 1;
