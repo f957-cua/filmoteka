@@ -28,7 +28,18 @@ export default {
     this.galleryStatus = "ByTopRated";
     const url = `${MAIN_URL}movie/top_rated?api_key=${KEY}&language=en-US&page=${this.page}`;
     return fetch(url).then(response => response.json());
-  }, 
+  },
+  
+  getById(id) {
+    // return fetch(`${MAIN_URL}/movie/${id}/external_ids?api_key=${KEY}`)
+    //   .then(resp => resp.json())
+    //   // .then(resp => { console.log(resp);})
+    //   .then(resp => {
+        const url = `${MAIN_URL}movie/${id}?api_key=${KEY}&language=en-US`    
+        return fetch(url).then(response => response.json());
+
+  },
+
   incrementPage() {
     return this.page += 1;
   },
@@ -39,3 +50,6 @@ export default {
     return this.page -= 1;
   },
 };
+
+
+
