@@ -1,13 +1,15 @@
 <div class="film-poster-wrapper">
-  <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" class="film-poster">
+  <img loading="lazy" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" class="film-poster">
 </div>
 <div class="film-info">
   <h2 class="film-title">{{title}}</h2>
   <ul class="film-description">
-    <li>Vote / Votes: {{vote_average}} / {{vote_count}}</li>
-    <li>Popularity: {{popularity}}</li>
-    <li>Original: Title {{original_title}}</li>
-    <li>Genre: {{#each genres}} {{name}}{{/each}}</li>
+    <li class="film-descr-itm">Vote/Votes: <span
+        class="film-descr-itm-txt-v_v"><span>{{vote_average}}</span>/{{vote_count}}</span></li>
+    <li class="film-descr-itm">Popularity: <span class="film-descr-itm-txt-pop">{{popularity}}</span></li>
+    <li class="film-descr-itm">Original Title: <span class="film-descr-itm-txt-orig_ttl">{{original_title}}</span></li>
+    <li class="film-descr-itm">Genre: {{#each genres}} <span class="film-descr-itm-txt-gnrs">{{name}}</span>{{/each}}
+    </li>
   </ul>
   <h3 class="about-title">About</h3>
   <p class="about-description">{{overview}}</p>

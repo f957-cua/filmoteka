@@ -46,11 +46,7 @@ export default {
 
   getById(id) {
     const url = `${MAIN_URL}movie/${id}?api_key=${KEY}&language=en-US`;
-    return fetch(url).then(response => response.json()).then(({ results }) => {
-      this.titleValidation(results)
-      this.releaseDateValidation(results)
-      return results
-    });
+    return fetch(url).then(response => response.json());
   },
 
   getUpcoming() {
@@ -65,15 +61,13 @@ export default {
   titleValidation(results) {
    return results.forEach(item => {
         if (!item.original_title) {
-          item.original_title = 'Sorry, No Info'
-          return
+          return item.original_title = item.name
         }})
   },
   releaseDateValidation(results) {
     return results.forEach(item => {
       if (!item.release_date) {
-        item.release_date = '2077-01-02'
-        return
+      return item.release_date = '2077-01-02'        
       }
     })
   },
