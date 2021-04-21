@@ -13,11 +13,9 @@ function onFilmCardClick(e) {
     if (!isCard) {
         return
     }
-    let filmId = +isCard.getAttribute('data')
-    apiService.getById(filmId).then((res) => {
-        refs.filmInfoContainer.innerHTML = filmInfo(res)
-        console.log(res) })
-    
+    let filmId = isCard.getAttribute('data')
+    apiService.getById(filmId).then((res) => 
+        refs.filmInfoContainer.innerHTML = filmInfo(res))    
     refs.filmModal.classList.remove('is-hidden');
     
     
