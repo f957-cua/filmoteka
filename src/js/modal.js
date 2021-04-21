@@ -4,20 +4,23 @@ import filmInfo from '../templates/film-info.hbs';
 
 refs.gallery.addEventListener('click', onFilmCardClick)
 refs.btnModalClose.addEventListener('click', closeModal)
-refs.filmModal.addEventListener('click', closeModal)
+refs.filmModal.addEventListener('click', onBdpClick)
 window.addEventListener('keydown', onEscCloseModal)
 
-function onFilmCardClick(evt) {
-//   const source = evt.target.getAttribute('data-source')
-//   const selectedCard = document.querySelector('.photo-card')
-//   selectedCa.setAttribute('src', '')
-    const isCard = evt.target.closest('.photo-card');
+function onFilmCardClick(e) {
+    refs.filmInfoContainer.innerHTML = ''
+    const isCard = e.target.closest('.photo-card');    
     if (!isCard) {
         return
-    }  
-    refs.filmModal.classList.remove('is-hidden')       
-    // selectedImage.setAttribute('src', source)
-    refs.filmInfoContainer.innerHTML = filmInfo(evt);
+    }
+    let filmId = +isCard.getAttribute('data')
+    apiService.getById(filmId).then((res) => {
+        refs.filmInfoContainer.innerHTML = filmInfo(res)
+        console.log(res) })
+    
+    refs.filmModal.classList.remove('is-hidden');
+    
+    
 }
 
 function closeModal() {
@@ -26,6 +29,13 @@ function closeModal() {
         return
     }
     return refs.filmModal.classList.add('is-hidden')
+}
+
+function onBdpClick(e) {
+    if (e.target !== refs.filmModal) {
+        return
+    }
+    closeModal()
 }
 
 function onEscCloseModal(evt) {

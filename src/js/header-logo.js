@@ -11,7 +11,7 @@ const onLogoClick = e => {
   refs.nextBtn.classList.add('js-by-trend-next');
   e.preventDefault();
   apiService.page = 1;
-  apiService.getByTrend().then(({ results }) => {
+  apiService.getByTrend().then((results) => {
     refs.gallery.innerHTML = galleryHbs(results);
   })
 };

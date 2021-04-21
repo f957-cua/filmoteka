@@ -38,7 +38,7 @@ function onPrevBtnClick() {
 
 function onTrendPrevBtnClick() {
     apiService.decrementPage()
-    apiService.getByTrend().then(({ results }) => {
+    apiService.getByTrend().then(( results ) => {
     refs.gallery.innerHTML = galleryHbs(results);
     })
   window.scrollTo({
@@ -50,7 +50,7 @@ function onTrendPrevBtnClick() {
 
 function onTrendNextBtnClick() {
     apiService.incrementPage()
-    apiService.getByTrend().then(({ results }) => {
+    apiService.getByTrend().then(( results ) => {
     refs.gallery.innerHTML = galleryHbs(results);
   })
   window.scrollTo({
@@ -62,7 +62,7 @@ function onTrendNextBtnClick() {
 
 function onSearchPrevBtnClick() {
     apiService.decrementPage()
-    apiService.getBySearchQuery().then(({ results }) => {
+    apiService.getBySearchQuery().then(( results ) => {
     refs.gallery.innerHTML = galleryHbs(results);
   })
   window.scrollTo({
@@ -74,7 +74,7 @@ function onSearchPrevBtnClick() {
 
 function onSearchNextBtnClick() {
     apiService.incrementPage()
-    apiService.getBySearchQuery().then(({ results }) => {
+    apiService.getBySearchQuery().then(( results ) => {
     refs.gallery.innerHTML = galleryHbs(results);
     })
   window.scrollTo({
@@ -87,7 +87,7 @@ function onSearchNextBtnClick() {
 
 function onPopularPrevBtnClick() {
     apiService.decrementPage()
-    apiService.getByPopular().then(({ results }) => {
+    apiService.getByPopular().then(( results ) => {
     refs.gallery.innerHTML = galleryHbs(results);
     });
   window.scrollTo({
@@ -99,7 +99,7 @@ function onPopularPrevBtnClick() {
 
 function onPopularNextBtnClick() {
     apiService.incrementPage()
-    apiService.getByPopular().then(({ results }) => {
+    apiService.getByPopular().then(( results ) => {
     refs.gallery.innerHTML = galleryHbs(results);
     });
   window.scrollTo({
@@ -110,7 +110,7 @@ function onPopularNextBtnClick() {
 }
 function onTopRatedPrevBtnClick() {
     apiService.decrementPage()
-    apiService.getByTopRated().then(({ results }) => {
+    apiService.getByTopRated().then(( results ) => {
     refs.gallery.innerHTML = galleryHbs(results);
     });
   window.scrollTo({
@@ -122,7 +122,7 @@ function onTopRatedPrevBtnClick() {
 
 function onTopRatedNextBtnClick() {
     apiService.incrementPage()
-    apiService.getByTopRated().then(({ results }) => {
+    apiService.getByTopRated().then(( results ) => {
     refs.gallery.innerHTML = galleryHbs(results);
     });
   window.scrollTo({
