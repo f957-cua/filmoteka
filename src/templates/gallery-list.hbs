@@ -2,8 +2,10 @@
 <li class="photo-card" data="{{id}}">
   <img loading="lazy" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt={{original_title}} width="320"
     height="auto">
-  <h2> {{original_title}} {{name}}</h2>
-  <h3> Release date {{release_date}} </h3>
-  <h4> Rating: {{vote_average}}</h4>
-</li>
+  <div class="photo-card-container">
+    <h2 class="photo-card-title"> {{original_title}} {{name}}</h2>
+    <p class="photo-card-release-date"> <span class="release-date-span">Release date:</span> {{release_date}} </p>
+    <p class="photo-card-rating"><span class="rating-span"> Rating: </span> {{vote_average}}</p>
+  </div>
+ </li>
 {{/each}}

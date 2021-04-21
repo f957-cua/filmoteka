@@ -9,6 +9,7 @@
 
   display: inline-block;
   margin: 0 auto;
+  padding: 5px;
   width: 50%;
   border: none;
   border-bottom: 1px solid black;
@@ -22,7 +23,11 @@
   background-color: inherit;
   outline: 1px solid orangered;
   position: absolute;
-  top: 12%;
+  top: 27%;
   right: 20%;
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    right: 14%;
+  }
 }
