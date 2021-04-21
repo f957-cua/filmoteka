@@ -7,14 +7,14 @@ refs.btnTopRated.addEventListener('click', onClickBtnTopRated);
 
 function onClickBtnPopular() {
   apiService.page = 1;
-  apiService.getByPopular().then(({ results }) => {
+  apiService.getByPopular().then(( results ) => {
     refs.gallery.innerHTML = galleryHbs(results);
   });
 }
 
 function onClickBtnTopRated() {
   apiService.page = 1;
-  apiService.getByTopRated().then(({ results }) => {
+  apiService.getByTopRated().then(( results ) => {
     refs.gallery.innerHTML = galleryHbs(results);
   });
 }

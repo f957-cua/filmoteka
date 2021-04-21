@@ -29,7 +29,7 @@ glide.mount();
 
 apiService
     .getUpcoming()
-    .then(({ results }) => {
+    .then(( results ) => {
         refs.sliderContainer.innerHTML = cardSliderTpl(results);
     })
 

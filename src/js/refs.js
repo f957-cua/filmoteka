@@ -4,7 +4,7 @@ const refs = {
   gallery: document.querySelector('.js-fetch-list'),
   home: document.querySelector('.js-header-home'),
   sliderContainer: document.querySelector('.js-slider-container'),
-  headerSearchForm: document.querySelector('.js-form'), 
+  headerSearchForm: document.querySelector('.js-form'),
   prevBtn: document.querySelector('.js-btn-p'),
   nextBtn: document.querySelector('.js-btn-n'),
   btnPopular: document.querySelector('[data-action="popular"]'),
@@ -12,6 +12,7 @@ const refs = {
   btnModalClose: document.querySelector('.modal-close'),
   filmInfoContainer: document.querySelector('.film-info-container'),
   filmModal: document.querySelector('.backdrop'),
-}
+  titleFilm: document.querySelector('.photo-card-title'),
+};
 
 export default refs;
