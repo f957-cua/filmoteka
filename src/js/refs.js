@@ -3,6 +3,7 @@ const refs = {
   logo: document.querySelector('.js-logo'),
   gallery: document.querySelector('.js-fetch-list'),
   home: document.querySelector('.js-header-home'),
+  sliderContainer: document.querySelector('.js-slider-container'),
   headerSearchForm: document.querySelector('.js-form'), 
   prevBtn: document.querySelector('.js-btn-p'),
   nextBtn: document.querySelector('.js-btn-n'),

@@ -12,6 +12,7 @@ const onLogoClick = e => {
   e.preventDefault();
   apiService.page = 1;
   apiService.getByTrend().then(({ results }) => {
+
     refs.gallery.innerHTML = galleryHbs(results);
   })
 };
