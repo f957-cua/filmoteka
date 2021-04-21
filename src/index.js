@@ -7,6 +7,7 @@ import './js/gallery-section-filter';
 import './js/toTop';
 import './js/galeery-pagination';
 import './js/modal';
+import './js/preloader';
 
 
 import '../src/sass/main.scss';
