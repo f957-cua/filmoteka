@@ -10,33 +10,72 @@ export default {
   getByTrend() {
     this.galleryStatus = 'ByTrend';
     const url = `${MAIN_URL}trending/all/day?api_key=${KEY}&page=${this.page}`;
-    return fetch(url).then(response => response.json());
+    return fetch(url).then(response => response.json()).then(({ results }) => {
+      this.titleValidation(results)
+      this.releaseDateValidation(results)
+      return results
+    })
   },
-
   getBySearchQuery() {
     this.galleryStatus = 'BySearchQuery';
     const url = `${MAIN_URL}search/movie?api_key=${KEY}&language=en-US&page=${this.page}&query=${this.searchQuery}`;
-    return fetch(url).then(response => response.json());
+    return fetch(url).then(response => response.json()).then(({ results }) => {
+      this.titleValidation(results)
+      this.releaseDateValidation(results)
+      return results
+    });
   },
   getByPopular() {
     this.galleryStatus = 'ByPopular';
     const url = `${MAIN_URL}movie/popular?api_key=${KEY}&language=en-US&page=${this.page}`;
-    return fetch(url).then(response => response.json());
+    return fetch(url).then(response => response.json()).then(({ results }) => {
+      this.titleValidation(results)
+      this.releaseDateValidation(results)
+      return results
+    });
   },
   getByTopRated() {
     this.galleryStatus = 'ByTopRated';
     const url = `${MAIN_URL}movie/top_rated?api_key=${KEY}&language=en-US&page=${this.page}`;
-    return fetch(url).then(response => response.json());
+    return fetch(url).then(response => response.json()).then(({ results }) => {
+      this.titleValidation(results)
+      this.releaseDateValidation(results)
+      return results
+    });
   },
 
   getById(id) {
     const url = `${MAIN_URL}movie/${id}?api_key=${KEY}&language=en-US`;
-    return fetch(url).then(response => response.json());
+    return fetch(url).then(response => response.json()).then(({ results }) => {
+      this.titleValidation(results)
+      this.releaseDateValidation(results)
+      return results
+    });
   },
 
   getUpcoming() {
     const url = `${MAIN_URL}movie/upcoming?api_key=${KEY}&language=en-US&page=${this.page}`;
-    return fetch(url).then(response => response.json());
+    return fetch(url).then(response => response.json()).then(({ results }) => {
+      this.titleValidation(results)
+      this.releaseDateValidation(results)
+      return results
+    });
+  },
+
+  titleValidation(results) {
+   return results.forEach(item => {
+        if (!item.original_title) {
+          item.original_title = 'Sorry, No Info'
+          return
+        }})
+  },
+  releaseDateValidation(results) {
+    return results.forEach(item => {
+      if (!item.release_date) {
+        item.release_date = '2077-01-02'
+        return
+      }
+    })
   },
 
   incrementPage() {

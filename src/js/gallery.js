@@ -4,7 +4,7 @@ import galleryHbs from '../templates/gallery-list.hbs';
 
 apiService
   .getByTrend()
-  .then(({ results }) => {
+  .then(( results ) => {
     refs.gallery.insertAdjacentHTML('beforeend', galleryHbs(results));
   })
   .catch(error => console.log(error));

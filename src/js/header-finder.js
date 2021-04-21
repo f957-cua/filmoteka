@@ -9,7 +9,7 @@ const onSearchSubmit = e => {
     return;
   }
   e.target[0].value = '';
-  apiService.getBySearchQuery().then(({ results }) => {
+  apiService.getBySearchQuery().then(( results ) => {
     refs.gallery.innerHTML = galleryHbs(results);
   });
 };
