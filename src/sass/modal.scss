@@ -36,6 +36,7 @@
   @media screen and (min-width: 1200px) {
     height: 568px;
     width: 882px;
+    padding: 50px 30px 41px;
   }
   @media screen and (min-width: 768px) and (max-width: 1199px) {
     height: 562px;
@@ -68,19 +69,40 @@
 }
 
 .film-info-container {
-  margin-left: auto;
-  margin-right: auto;
+  @media screen and (min-width: 1200px) {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.film-info {
+  @media screen and (min-width: 1200px) {
+    margin-left: 30px;
+  }
+}
+
+.film-poster-wrapper {
+  // font-family: Roboto;
+  // font-style: normal;
+  // font-weight: 500;
+  // font-size: 12px;
+  // line-height: 1.67;
+  // margin-top: 10px;
+  width: 240px;
+  height: auto;
+  @media screen and (min-width: 1200px) {
+    width: 396px;
+    height: 478px;
+  }
 }
 
 .film-poster {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.67;
-  margin-top: 10px;
-  width: 240px;
-  height: auto;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .film-title {
@@ -88,11 +110,17 @@
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  line-height: 23px;
+  line-height: 1.15;
   text-transform: uppercase;
   color: #000000;
   margin-top: 30px;
   margin-bottom: 20px;
+  @media screen and (min-width: 1200px) {
+    margin-top: 0;
+    font-family: Roboto;
+    font-size: 30px;
+    line-height: 1.17;
+  }
 }
 .button-add-container {
   display: flex;
@@ -112,8 +140,11 @@
   align-items: center;
   text-align: center;
   text-transform: uppercase;
+  cursor: pointer;
   &.add-t-w {
     background: #ff6b01;
+    border: 0;
+    outline: 0;
   }
   &.add-t-q {
     margin-left: 15px;
@@ -128,10 +159,12 @@
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
-  line-height: 20px;
+  line-height: 1.67;
   width: 240px;
   margin-top: 10px;
-  /* or 167% */
+  @media screen and (min-width: 1200px) {
+    width: 396px;
+  }
 }
 .about-title {
   font-family: Roboto;
@@ -143,4 +176,6 @@
   text-transform: uppercase;
   color: #000000;
   margin-top: 20px;
+  @media screen and (min-width: 1200px) {
+  }
 }
