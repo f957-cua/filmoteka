@@ -1,19 +1,16 @@
 import refs from './refs';
 import apiService from './apiService';
-import galleryHbs from '../templates/gallery-list.hbs'
-let searchQuery = ''
+import galleryHbs from '../templates/gallery-list.hbs';
 
 const onSearchSubmit = e => {
   e.preventDefault();
-  if (e.target[0].value.trim() === '') {
-    return
+  apiService.searchQuery = e.target[0].value;
+  if (apiService.searchQuery === '') {
+    return;
   }
-  searchQuery = e.target[0].value;
   e.target[0].value = '';
-  apiService.getBySearchQuery(searchQuery).then(({ results }) => {
-    console.log(results);
+  apiService.getBySearchQuery().then(( results ) => {
     refs.gallery.innerHTML = galleryHbs(results);
-  })
-}
-refs.headerSearchForm.addEventListener('submit', onSearchSubmit)
-  
+  });
+};
+refs.headerSearchForm.addEventListener('submit', onSearchSubmit);

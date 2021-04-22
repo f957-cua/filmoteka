@@ -9,19 +9,25 @@
 
   display: inline-block;
   margin: 0 auto;
+  padding: 5px;
   width: 50%;
   border: none;
   border-bottom: 1px solid black;
   margin-top: 20px;
   margin-bottom: 20px;
-}
+  background-color: rgba(211, 211, 211, 0.7);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(211, 211, 211, 0.7);}
 .btn-submit {
   border: none;
   padding: 2px 4px;
   background-color: inherit;
   outline: 1px solid orangered;
   position: absolute;
-  top: 12%;
+  top: 27%;
   right: 20%;
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    right: 14%;
+  }
 }

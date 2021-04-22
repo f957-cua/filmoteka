@@ -1,0 +1,200 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    z-index: 99;
+    & .modal {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 90%;
+  width: 90%;
+  padding: 48px 20px 41px;
+  background-color: #fff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: 99;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @media screen and (min-width: 1200px) {
+    height: 568px;
+    width: 882px;
+    padding: 50px 30px 41px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    height: 562px;
+    width: 618px;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  min-width: 30px;
+  min-height: 30px;
+  top: 10px;
+  right: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.close-icone {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.film-info-container {
+  @media screen and (min-width: 1200px) {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: flex-start;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.film-info {
+  @media screen and (min-width: 1200px) {
+    margin-left: 30px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-left: 32px;
+  }
+}
+
+.film-poster-wrapper {
+  width: 240px;
+  height: auto;
+  @media screen and (min-width: 1200px) {
+    width: 396px;
+    height: 478px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    width: 264px;
+    height: 374px;
+  }
+}
+
+.film-poster {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.film-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: #000000;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  @media screen and (min-width: 1200px) {
+    font-family: Roboto;
+    font-size: 30px;
+    line-height: 1.17;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-top: 0;
+  }
+}
+
+.film-descr-itm {
+  font-size: 12px;
+  line-height: 1.33;
+  color: #8c8c8c;
+  margin-bottom: 10px;
+}
+
+.button-add-container {
+  display: flex;
+  align-items: center;
+}
+
+.modal-button {
+  width: 113px;
+  height: 44px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  &.add-t-w {
+    background: #ff6b01;
+    border: 0;
+    outline: 0;
+  }
+  &.add-t-q {
+    margin-left: 15px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    background: #fff;
+  }
+}
+
+.about-description {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
+  width: 240px;
+  margin-top: 10px;
+  @media screen and (min-width: 1200px) {
+    width: 396px;
+  }
+}
+
+.about-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  align-items: center;
+  text-transform: uppercase;
+  color: #000000;
+  margin-top: 20px;
+  @media screen and (min-width: 1200px) {
+  }
+}
+
+.close-modal-btn {
+  color: orangered;
+  font-weight: 700;
+  font-size: 20px;
+}

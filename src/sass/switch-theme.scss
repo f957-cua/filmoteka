@@ -1,16 +1,16 @@
 body.light-theme {
   background-color: #fff;
-  background-image: url(../images/white-theme-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url(../images/white-theme-bg2.jpg);
+  // background-image: url(../images/test-1.jpeg);
+
   color: #333333;
 }
 
 body.dark-theme {
   background-color: #000;
-  background-image: url(../images/black-theme-bg.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  // background-image: url(../images/black-theme-bg.jpg);
+  background-image: url(../images/test-black-1.jpg);
+
   color: #fff;
 }
 
@@ -37,14 +37,16 @@ body.dark-theme {
 }
 
 .theme-switch {
-  display: inline-flex;
+  display: none;
   margin-top: 5px;
   margin-bottom: 5px;
   position: absolute;
   top: 60px;
   right: 8%;
   @media screen and (min-width: 481px) {
-    top: 70px;
+    display: inline-flex;
+
+    top: 125px;
   }
 
   @media screen and(min-width:768px) {

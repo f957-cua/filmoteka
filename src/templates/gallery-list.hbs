@@ -1,9 +1,11 @@
 {{#each this}}
-<li class="photo-card">
-  <img loading="lazy" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt={{original_title}} width="320"
-    height="auto">
-  <h2> {{original_title}} </h2>
-  <h3> Release date {{release_date}} </h3>
-  <h4>Rating: {{vote_average}}</h4>
+<li class="photo-card" data="{{id}}">
+  <img loading="lazy" src="{{poster_path}}" alt="{{original_title}}" width="320" height="auto">
+  <div class="photo-card-container">
+    <h2 class="photo-card-title"> {{original_title}}</h2>
+    <p class="photo-card-release-date">{{release_date}}</p>
+    <p class="photo-card-rating"><span class="rating-span"> Rating: </span> {{vote_average}}</p>
+    <p class="photo-card-genres">{{genre_ids}}</p>
+  </div>
 </li>
 {{/each}}

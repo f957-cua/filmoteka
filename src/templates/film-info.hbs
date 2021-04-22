@@ -1,7 +1,20 @@
-<div class="film-info-container">
-  <div class="film-poster-wrapper">
-    <img src="#" alt="" class="film-poster">
+<div class="film-poster-wrapper">
+  <img loading="lazy" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" class="film-poster">
+</div>
+<div class="film-info">
+  <h2 class="film-title">{{title}}</h2>
+  <ul class="film-description">
+    <li class="film-descr-itm">Vote/Votes: <span
+        class="film-descr-itm-txt-v_v"><span>{{vote_average}}</span>/{{vote_count}}</span></li>
+    <li class="film-descr-itm">Popularity: <span class="film-descr-itm-txt-pop">{{popularity}}</span></li>
+    <li class="film-descr-itm">Original Title: <span class="film-descr-itm-txt-orig_ttl">{{original_title}}</span></li>
+    <li class="film-descr-itm">Genre: {{#each genres}} <span class="film-descr-itm-txt-gnrs">{{name}}</span>{{/each}}
+    </li>
+  </ul>
+  <h3 class="about-title">About</h3>
+  <p class="about-description">{{overview}}</p>
+  <div class="button-add-container" style="margin-top: 20px;">
+    <button class="modal-button add-t-w">add to watched</button>
+    <button class="modal-button add-t-q">add to queue</button>
   </div>
-  <h2 class="film-title">title</h2>
-
 </div>

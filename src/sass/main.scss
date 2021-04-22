@@ -2,12 +2,18 @@
 
 @import 'reset.scss';
 @import 'container.scss';
+@import 'preloader.scss';
 @import 'scroll.scss';
 @import 'header.scss';
 @import 'nav.scss';
 @import 'switch-theme.scss';
+@import 'slider.scss';
 @import 'search.scss';
 @import 'gallery.scss';
+@import 'modal.scss';
 @import 'footer.scss';
-@import 'up-button.scss';
 @import 'registration.scss';
+@import 'footer-modal.scss';
+@import 'toTop.scss';
+@import '../../node_modules/@glidejs/glide/src/assets/sass/glide.theme';
+@import '../../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';

@@ -8,15 +8,33 @@
       rel="icon"
       href="    data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhgAAAKEAAAChAAAAoQAAAKEAAAChAAAAoQAAAKEAAAChAAAAoQAAAKEAAACJAAAAAAAAAAAAAAAAAAAAAAAAAPsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/QAAAAEAAAAAAAAAAAAAAAAAAAD7AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP0AAAABAAAAAAAAAAAAAAAAAAAA+wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD9AAAAAQAAAAAAAABDAAAA3gAAAPsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/gAAAKgAAACrAAAA5wAAAP0AAAD7AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP4AAACqAAAArgAAAOkAAAD9AAAA4QAAAP0AAAD8AAAA/QAAAP0AAAD9AAAA/QAAAP0AAAD8AAAA/QAAAP0AAADkAAAAAAAAAAAAAABEAAAA4AAAABgAAAC1AAAA+wAAANwAAABJAAAAAAAAADkAAADHAAAA/AAAAOMAAABwAAAAAQAAAAAAAAAAAAAAAAAAAAAAAACzAAAA2wAAAFwAAAClAAAA9QAAAD4AAAD0AAAAtwAAAFgAAACGAAAA+wAAAHAAAAAAAAAAAAAAAAAAAAAAAAAA9gAAAGMAAAAAAAAACQAAAP4AAADdAAAA2QAAAAUAAAAAAAAAAAAAAIgAAADiAAAAAAAAAAAAAAAAAAAAAAAAANEAAACzAAAAFAAAAGQAAAD+AAAA0gAAALQAAAAAAAAAAAAAAAAAAABdAAAA+QAAAAAAAAAAAAAAAAAAAAAAAAA9AAAA7QAAAP8AAAD9AAAAiAAAAGsAAADzAAAAKwAAAAAAAAAIAAAAvwAAAMEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAABFAAAAJgAAAAAAAAAHAAAAwgAAAPUAAAC8AAAA4gAAAO8AAAAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAABjAAAAmQAAAH8AAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAAAHAAAABwAAAAYAAAAEAAAAAAAAAAAAAAAEAAAEDwAAAA8AACDHAAABxwAAAI8AAIAPAAD8HwAA//8AAA==
     "
-      type="mage/x-icon"
+      type="image/x-icon"
     />
     <title>Filmoteka</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   </head>
 
   <body>
-    <header>
-      <div class="header container">
+    <div
+      class="preloader"
+      style="
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-image: url('https://cubiq.ru/wp-content/uploads/2020/09/hogwarts-780x439.jpg');
+        /* background-image: url('https://images3.alphacoders.com/922/922201.jpg'); */
+        background-repeat: no-repeat;
+        background-size: cover;
+      "
+    >
+      <div class="preloader-icon">
+        <!-- <svg class="preloader-icon__hat" aria-label="Иконка прелоадера">
+        <use href="./images/sprite.svg#besom-broom"></use>
+      </svg> -->
+      </div>
+    </div>
+    <header class="container">
+      <div class="header">
         <div class="logo js-logo" id="logo">
           <svg class="theme-switch__logo" role="img" aria-label="Иконка фильма">
             <use href="./images/sprite.svg#icon-film"></use>
@@ -48,7 +66,7 @@
         </div>
       </div>
 
-      <form class="search container js-form">
+      <form class="search js-form" id="search">
         <input
           class="input-search js-input-search"
           type="text"
@@ -101,14 +119,68 @@
     </header>
 
     <main>
+      <div class="slider-wrapper">
+        <section class="container container-slider">
+          <h2 class="slider-title">Upcoming movies</h2>
+          <div class="glide glide--ltr glide--slider glide--swipeable">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides js-slider-container">
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+                <li class="glide__slide"></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
       <div class="button-filter container">
-        <button class="button">popular</button>
-        <button class="button">top rated</button>
-        <button class="button">upcoming</button>
+        <button class="button" data-action="popular">popular</button>
+        <button class="button" data-action="top rated">top rated</button>
       </div>
 
       <ul class="articles container js-fetch-list"></ul>
-      <a href="#" id="scroll_top"></a>
+      <div class="button-filter container" style="margin-bottom: 10px">
+        <button class="button js-btn-p js-by-trend-prev">Previous page</button>
+        <button class="button js-btn-n js-by-trend-next">Next page</button>
+      </div>
+
+      <div class="backdrop is-hidden">
+        <div class="modal">
+          <button class="modal-close">
+            <span class="close-modal-btn">&#10006;</span>
+          </button>
+          <div class="film-info-container"></div>
+        </div>
+      </div>
+
+      <a
+        href="#search"
+        class="up-button"
+        id="myBtn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="up-button-svg" width="35" height="35">
+          <use href="./images/sprite.svg#icon-circle-up"></use></svg
+      ></a>
     </main>
 
     <footer class="footer">
