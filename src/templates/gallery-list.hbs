@@ -1,5 +1,6 @@
 {{#each this}}
-<li class="photo-card" data="{{id}}">
+<li class="photo-card" data="{{id}}" data-img="{{poster_path}}" data-title="{{original_title}}"
+  data-pop="{{popularity}}" data-v_a="{{vote_average}}" data-v_c="{{vote_count}}" data-overview="{{overview}}">
   <img loading="lazy" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{original_title}}" width="320"
     height="auto">
   <div class="photo-card-container">

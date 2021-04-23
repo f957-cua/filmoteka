@@ -127,6 +127,39 @@
   }
 }
 
+.film-descr-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.film-description-txt {
+  margin-left: 39px;
+  @media screen and (min-width: 1200px) {
+    margin-left: 80px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-left: 39px;
+  }
+}
+
+.film-descr-itm-txt {
+  font-size: 12px;
+  line-height: 1.33;
+  margin-bottom: 10px;
+  & .vote-ave {
+    width: 40px;
+    height: 16px;
+    font-size: 12px;
+    line-height: 1.15;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background: #ff6b01;
+    border-radius: 5px;
+  }
+}
+
 .film-descr-itm {
   font-size: 12px;
   line-height: 1.33;
@@ -174,6 +207,7 @@
   line-height: 1.67;
   width: 240px;
   margin-top: 10px;
+  overflow: hidden;
   @media screen and (min-width: 1200px) {
     width: 396px;
   }
