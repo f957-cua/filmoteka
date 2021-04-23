@@ -44,11 +44,23 @@
   }
 }
 
+body.light-theme .modal {
+  background-color: #dbd1d1;
+  box-shadow: 5px 5px 15px 5px #653b80;
+}
+
+body.dark-theme .modal {
+  color: #fff;
+  background-color: #11061b;
+  box-shadow: 5px 5px 15px 5px #380e0e;
+}
+
 .modal-close {
   position: absolute;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  color: #ff6b01;
   background-color: #fff;
   min-width: 30px;
   min-height: 30px;
@@ -57,6 +69,17 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
+}
+
+body.light-theme .modal-close {
+  background-color: #dbd1d1;
+  box-shadow: 1px 1px 20px 1px #ab8ac0;
+}
+
+body.dark-theme .modal-close {
+  color: #ff6b01;
+  background-color: #11061b;
+  box-shadow: 5px 5px 15px 5px #380e0e;
 }
 
 .close-icone {
@@ -108,17 +131,14 @@
 }
 
 .film-title {
-  font-family: Roboto;
-  font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.15;
   text-transform: uppercase;
-  color: #000000;
+  color: #ff6b01;
   margin-top: 30px;
   margin-bottom: 20px;
   @media screen and (min-width: 1200px) {
-    font-family: Roboto;
     font-size: 30px;
     line-height: 1.17;
     margin-top: 0;
@@ -178,9 +198,6 @@
   height: 44px;
   padding: 6px 10px;
   border-radius: 5px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
   align-items: center;
@@ -220,14 +237,11 @@
 }
 
 .about-title {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
   text-align: inherit;
   text-transform: uppercase;
-  color: #000000;
+  color: #ff6b01;
   margin-top: 20px;
   @media screen and (min-width: 1200px) {
   }
