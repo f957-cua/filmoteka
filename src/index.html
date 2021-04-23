@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
- 
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,20 +15,24 @@
   </head>
 
   <body>
-    <div class="preloader" style="width: 100%; 
-  height: 100%;
-  position: fixed;
-   background-image: url('https://cubiq.ru/wp-content/uploads/2020/09/hogwarts-780x439.jpg');
-   /* background-image: url('https://images3.alphacoders.com/922/922201.jpg'); */
-   background-repeat: no-repeat;
-    background-size: cover;
-  ">
-    <div class="preloader-icon">
-      <!-- <svg class="preloader-icon__hat" aria-label="Иконка прелоадера">
+    <div
+      class="preloader"
+      style="
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-image: url('https://cubiq.ru/wp-content/uploads/2020/09/hogwarts-780x439.jpg');
+        /* background-image: url('https://images3.alphacoders.com/922/922201.jpg'); */
+        background-repeat: no-repeat;
+        background-size: cover;
+      "
+    >
+      <div class="preloader-icon">
+        <!-- <svg class="preloader-icon__hat" aria-label="Иконка прелоадера">
         <use href="./images/sprite.svg#besom-broom"></use>
       </svg> -->
+      </div>
     </div>
-  </div>
     <header class="container">
       <div class="header">
         <div class="logo js-logo" id="logo">
@@ -50,13 +53,26 @@
               >
             </li>
             <li class="nav-item">
-              <a href="./library.html" target="_blank" rel="noopener noreferrer"
+              <a
+                id="sign-in-status"
+                href="./library.html"
+                target="_blank"
+                rel="noopener noreferrer"
                 >my library</a
               >
             </li>
           </ul>
         </div>
-
+        <ul class="registration">
+          <li class="registration-item">
+            <button
+              class="registration-btn"
+              type="button"
+              id="sign-in"
+            ></button>
+          </li>
+          <li id="account-details" class="registration-item"></li>
+        </ul>
       </div>
 
       <form class="search js-form" id="search">
@@ -155,15 +171,14 @@
         <button class="button js-btn-n js-by-trend-next">Next page</button>
       </div>
 
-    <div class="backdrop is-hidden">
-      <div class="modal">
-        <button class="modal-close"> 
-          <span class="close-modal-btn">&#10006;</span>
-        </button>
-        <div class="film-info-container">                  
-        </div>     
-       </div>
-     </div>
+      <div class="backdrop is-hidden">
+        <div class="modal">
+          <button class="modal-close">
+            <span class="close-modal-btn">&#10006;</span>
+          </button>
+          <div class="film-info-container"></div>
+        </div>
+      </div>
 
       <a
         href="#search"
@@ -193,5 +208,13 @@
         </p>
       </div>
     </footer>
+    <div id="registration-container" class="backdrop is-hidden">
+      <div class="modal">
+        <button class="modal-close">
+          <span class="close-modal-btn">&#10006;</span>
+        </button>
+        <div id="firebaseui-auth-container"></div>
+      </div>
+    </div>
   </body>
 </html>
