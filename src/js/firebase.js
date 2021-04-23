@@ -5,17 +5,19 @@ import * as firebaseUi from 'firebaseui';
 import refs from './refs';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDCrVa6zpkJN0MnC22HGNcfi7vaIe8Op8M",
-    authDomain: "filmoteka-bl1.firebaseapp.com",
-    projectId: "filmoteka-bl1",
-    storageBucket: "filmoteka-bl1.appspot.com",
-    messagingSenderId: "616243203343",
-    appId: "1:616243203343:web:c89027d397f3da6ce4827a",
-    measurementId: "G-3Z1JDDZM39"
+  apiKey: "AIzaSyDCrVa6zpkJN0MnC22HGNcfi7vaIe8Op8M",
+  authDomain: "filmoteka-bl1.firebaseapp.com",
+  databaseURL: "https://filmoteka-bl1-default-rtdb.firebaseio.com",
+  projectId: "filmoteka-bl1",
+  storageBucket: "filmoteka-bl1.appspot.com",
+  messagingSenderId: "616243203343",
+  appId: "1:616243203343:web:c89027d397f3da6ce4827a",
+  measurementId: "G-3Z1JDDZM39"
 };
 
 firebase.initializeApp(firebaseConfig);
 firebase.auth();
+const database = firebase.database();
 const ui = new firebaseUi.auth.AuthUI(firebase.auth());
 
 const uiConfig = {
