@@ -2,6 +2,7 @@ import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/auth";
 import * as firebaseUi from 'firebaseui';
+import refs from './refs';
 
 const firebaseConfig = {
     apiKey: "AIzaSyDCrVa6zpkJN0MnC22HGNcfi7vaIe8Op8M",
@@ -14,7 +15,6 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
 firebase.auth();
 const ui = new firebaseUi.auth.AuthUI(firebase.auth());
 
@@ -29,7 +29,7 @@ const uiConfig = {
     uiShown: function() {
       // The widget is rendered.
       // Hide the loader.
-      document.getElementById('loader').style.display = 'none';
+      // document.getElementById('loader').style.display = 'none';
     }
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
@@ -56,27 +56,36 @@ const initApp = function() {
             const photoURL = user.photoURL;
           
             user.getIdToken().then(function(accessToken) {
-              document.getElementById('sign-in-status').textContent = 'Signed in';
-              document.getElementById('sign-in').textContent = 'Sign out';
-              document.getElementById('sign-in').addEventListener('click', ()=>firebase.auth().signOut().then(() => {
+              refs.myLibrary.textContent = 'my library';
+              refs.registrationBtn.textContent = 'Sign out';
+              refs.registrationBtn.addEventListener('click', ()=>firebase.auth().signOut().then(() => {
   // Sign-out successful.
 }).catch((error) => {
   // An error happened.
 }));
-              document.getElementById('account-details').insertAdjacentHTML("afterbegin", `<ul><li>User: ${displayName}</li>
-              <li>Email: ${email}</li>
-              <li><img src= ${photoURL} alt= ${displayName}></li></ul>`)
+              refs.accountInfo.insertAdjacentHTML("afterbegin",
+              `<ul class="user">
+              <li class="user-item">
+              <p>User: ${displayName}</p>
+              <p>Email: ${email}</p>
+              </li>
+              <li class="user-item">
+              <img  class="user-img" src= ${photoURL} alt= ${displayName}>
+              </li>
+              </ul>`)
               });
           } else {
             // User is signed out.
-            document.getElementById('sign-in-status').textContent = 'Signed out';
-            document.getElementById('sign-in').textContent = 'Sign in';
-            document.getElementById('sign-in').addEventListener('click', () => ui.start('#firebaseui-auth-container', uiConfig));
-            document.getElementById('account-details').textContent = 'null';
+            refs.myLibrary.textContent = 'Signed out';
+            refs.registrationBtn.textContent = 'Sign in';
+            refs.accountInfo.textContent = "";
           }
         }, function(error) {
           console.log(error);
         });
       };
 
-export  { ui, uiConfig, initApp };
+export { ui, uiConfig, initApp };
+
+
+

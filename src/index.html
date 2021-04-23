@@ -41,11 +41,6 @@
           </svg>
           <a href="index.html">Filmoteka</a>
         </div>
-        <div id="firebaseui-auth-container"></div>
-        <div id="loader">Loading...</div>
-        <div id="sign-in-status"></div>
-        <button type="button" id="sign-in"></button>
-        <div id="account-details" style="width: 100%; height: 100%"></div>
         <div class="nav">
           <ul class="nav-list">
             <li class="nav-item js-header-home">
@@ -58,12 +53,26 @@
               >
             </li>
             <li class="nav-item">
-              <a href="./library.html" target="_blank" rel="noopener noreferrer"
+              <a
+                id="sign-in-status"
+                href="./library.html"
+                target="_blank"
+                rel="noopener noreferrer"
                 >my library</a
               >
             </li>
           </ul>
         </div>
+        <ul class="registration">
+          <li class="registration-item">
+            <button
+              class="registration-btn"
+              type="button"
+              id="sign-in"
+            ></button>
+          </li>
+          <li id="account-details" class="registration-item"></li>
+        </ul>
       </div>
 
       <form class="search js-form" id="search">
@@ -199,5 +208,13 @@
         </p>
       </div>
     </footer>
+    <div id="registration-container" class="backdrop is-hidden">
+      <div class="modal">
+        <button class="modal-close">
+          <span class="close-modal-btn">&#10006;</span>
+        </button>
+        <div id="firebaseui-auth-container"></div>
+      </div>
+    </div>
   </body>
 </html>

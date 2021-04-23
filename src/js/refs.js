@@ -17,6 +17,11 @@ const refs = {
 
 
   titleFilm: document.querySelector('.photo-card-title'),
+
+  myLibrary: document.getElementById('sign-in-status'),
+  registrationBtn: document.getElementById('sign-in'),
+  accountInfo: document.getElementById('account-details'),
+  registrationModal:document.getElementById('registration-container'),
 };
 
 
