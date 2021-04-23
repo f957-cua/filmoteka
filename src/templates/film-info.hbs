@@ -3,14 +3,21 @@
 </div>
 <div class="film-info">
   <h2 class="film-title">{{title}}</h2>
-  <ul class="film-description">
-    <li class="film-descr-itm">Vote/Votes: <span
-        class="film-descr-itm-txt-v_v"><span>{{vote_average}}</span>/{{vote_count}}</span></li>
-    <li class="film-descr-itm">Popularity: <span class="film-descr-itm-txt-pop">{{popularity}}</span></li>
-    <li class="film-descr-itm">Original Title: <span class="film-descr-itm-txt-orig_ttl">{{original_title}}</span></li>
-    <li class="film-descr-itm">Genre: {{#each genres}} <span class="film-descr-itm-txt-gnrs">{{name}}</span>{{/each}}
-    </li>
-  </ul>
+  <div class="film-descr-container">
+    <ul class="film-description">
+      <li class="film-descr-itm">Vote/Votes:</li>
+      <li class="film-descr-itm">Popularity: <span class="film-descr-itm-txt-pop"></span></li>
+      <li class="film-descr-itm">Original Title: <span class="film-descr-itm-txt-orig_ttl"></span></li>
+      <li class="film-descr-itm">Genre:</li>
+    </ul>
+    <ul class="film-description-txt">
+      <li class="film-descr-itm-txt"><span class="vote-ave">{{vote_average}}</span>/{{vote_count}}</li>
+      <li class="film-descr-itm-txt">{{popularity}}</li>
+      <li class="film-descr-itm-txt">{{original_title}}</li>
+      <li class="film-descr-itm-txt">{{#each genres}} {{name}} {{/each}}</li>
+    </ul>
+  </div>
+
   <h3 class="about-title">About</h3>
   <p class="about-description">{{overview}}</p>
   <div class="button-add-container" style="margin-top: 20px;">
