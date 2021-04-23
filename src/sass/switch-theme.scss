@@ -61,6 +61,7 @@ body.dark-theme {
   height: 12px;
   margin-right: 3px;
   margin-left: 3px;
+  z-index:2;
 
   @media screen and (min-width: 768px) {
     height: 22px;
@@ -84,6 +85,9 @@ body.dark-theme {
   position: relative;
   border-radius: 50em;
   padding: 3px 0;
+  border:1px solid orangered;
+
+  box-shadow: -10px 0px 13px -7px #fff, 10px 0px 13px -7px #fff, 0px 0px 50px 20px #fff;
 
   @media screen and (min-width: 320px) {
     width: 32px;
@@ -94,6 +98,10 @@ body.dark-theme {
     width: 60px;
     height: 26px;
   }
+}
+body.dark-theme .theme-switch__control{
+  box-shadow: -10px 0px 13px -7px #000, 10px 0px 13px -7px #000, 0px 0px 50px 20px #000;
+
 }
 
 .theme-switch__toggle {
@@ -120,6 +128,8 @@ body.dark-theme {
   border-radius: inherit;
   z-index: 1;
   cursor: pointer;
+  box-shadow: 0 0 0 3px orangered;
+
 }
 
 .theme-switch__marker {
@@ -150,11 +160,11 @@ body.dark-theme {
 body.dark-theme .input-search,
 body.dark-theme .input-search:focus,
 body.dark-theme .input-search:hover {
-  background-color: #333333;
+  background-color: rgba(51, 51, 51, 0.7);
   color: #fff;
 }
 body.dark-theme .btn-submit {
-  background-color: #333333;
+  background-color: rgba(51, 51, 51, 0.7);
 }
 
 .theme-switch__toggle:checked ~ .theme-switch__marker {
@@ -169,7 +179,3 @@ body.dark-theme .btn-submit {
   }
 }
 
-.theme-switch__toggle:focus + .theme-switch__track,
-.theme-switch__toggle:active + .theme-switch__track {
-  box-shadow: 0 0 0 3px orangered;
-}
