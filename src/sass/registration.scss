@@ -1,0 +1,36 @@
+.registration {
+  margin-left: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.registration-btn {
+  padding: 0px 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  font-size: 16px;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff,
+    0 0 30px #fff, 0 0 40px #fff, 0 0 55px #fff, 0 0 75px #fff;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.registration-item {
+  margin-left: 15px;
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.user-img {
+  width: 50%;
+}
+
+.user-item {
+  margin-left: 10px;
+}

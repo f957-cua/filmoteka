@@ -7,6 +7,6 @@ window.addEventListener('load', () => {
             refs.preloader.remove();
         }, 2000);
     
-    },3000)
+    },500)
 })
 

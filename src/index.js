@@ -3,6 +3,9 @@ import './js/header-finder';
 import './js/switch-theme';
 import './js/slider.js'
 import './js/gallery';
+import './js/registration';
+
+import '../src/sass/main.scss';
 import './js/gallery-section-filter';
 import './js/toTop';
 import './js/galeery-pagination';

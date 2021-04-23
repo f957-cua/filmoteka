@@ -63,6 +63,7 @@ function onSlideCardClick(e) {
     apiService.getById(filmId).then((res) => 
         refs.filmInfoContainer.innerHTML = filmInfo(res))    
     refs.filmModal.classList.remove('is-hidden');    
+
 }
 
 function closeModal() {
