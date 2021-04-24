@@ -73,11 +73,11 @@
 }
 
 body.dark-theme .photo-card {
-  background-color: rgb(17, 6, 27);
+  background-color: $dark-theme-cards-bg;
   box-shadow: 5px 5px 15px 5px #380e0e;
 }
 body.light-theme .photo-card {
-  background-color: rgb(219, 209, 209);
+  background-color: $white-theme-cards-bg;
   box-shadow: 5px 5px 15px 5px #653b80;
 }
 
