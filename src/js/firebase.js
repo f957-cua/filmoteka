@@ -77,7 +77,7 @@ function writeUserData(library, filmInfoObj) {
 function readUserData(library) {
   const userId = firebase.auth().currentUser.uid;
  return database.ref('users/' + userId + library).get().then((snapshot) => {
-  if (snapshot.exists()) {
+   if (snapshot.exists()) {
     return snapshot.val()
   } else {
     console.log("No data available");

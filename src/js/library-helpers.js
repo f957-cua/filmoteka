@@ -7,9 +7,18 @@ function addListenerOnBtnModal(data) {
   const buttonAddToWatched = document.querySelector('.add-t-w');
   const buttonAddToQueue = document.querySelector('.add-t-q');
   buttonAddToWatched.addEventListener('click', () => {
-    writeUserData('/watched', data);
-    buttonAddToWatched.disabled = true;
-    buttonAddToWatched.textContent = 'Added to Watched';
+    const checkData = async () => await readUserData('/watched');
+    checkData().then(rez => {
+      if (!rez[data.id]) {
+        writeUserData('/watched', data);
+        buttonAddToWatched.textContent = 'Remove from Watched';
+        return;
+      }
+      // writeUserData('/watched', null);     
+      buttonAddToWatched.textContent = 'Add to Watched';
+
+     })
+   
   });
   buttonAddToQueue.addEventListener('click', () => {
     writeUserData('/queue', data);
