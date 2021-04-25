@@ -68,17 +68,17 @@ function signOut() {
 
 function writeUserData(library, filmInfoObj) {
   const userId = firebase.auth().currentUser.uid;
-  const filmKey = filmInfoObj.id + '';
+  const filmKey = filmInfoObj.id ?? Math.round(Math.random()*1000000);
   const update = {};
   update[filmKey] = filmInfoObj;
   database.ref('users/' + userId + library).update(update);
 }
 
-function readUserData() {
+function readUserData(library) {
   const userId = firebase.auth().currentUser.uid;
-  database.ref('users/' + userId).get().then((snapshot) => {
+ return database.ref('users/' + userId + library).get().then((snapshot) => {
   if (snapshot.exists()) {
-    console.log(snapshot.val());
+    return snapshot.val()
   } else {
     console.log("No data available");
   }

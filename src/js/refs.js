@@ -18,8 +18,6 @@ const refs = {
   registrationBtn: document.getElementById('sign-in'),
   accountInfo: document.getElementById('account-details'),
   registrationModal:document.getElementById('registration-container'),
-  buttonAddToWatched: document.querySelector('.modal-button add-t-w'),
-  buttonAddToQueue: document.querySelector('.modal-button add-t-q'),
 };
 
 

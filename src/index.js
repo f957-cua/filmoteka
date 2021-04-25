@@ -4,7 +4,7 @@ import './js/switch-theme';
 import './js/slider.js'
 import './js/gallery';
 import './js/registration';
-import './js/my-libery';
+import './js/my-library';
 import './js/gallery-section-filter';
 import './js/toTop';
 import './js/galeery-pagination';

@@ -1,5 +1,6 @@
-import { ui, uiConfig, writeUserData, readUserData } from './firebase';
+import { ui, uiConfig } from './firebase';
 import { openCloseModal } from './registration-helpers';
+import { toggleCurrentLink, changeGalleryToMyLibrary, myLibraryRendering } from './library-helpers';
 import refs from './refs';
 
 refs.myLibrary.addEventListener('click', (e) => {
@@ -9,7 +10,8 @@ refs.myLibrary.addEventListener('click', (e) => {
     ui.start('#firebaseui-auth-container', uiConfig);
     return;
   }
-  refs.gallery.innerHTML = '';
-  readUserData();
+  changeGalleryToMyLibrary();
+  toggleCurrentLink(e);
+  myLibraryRendering('/watched');
 });
 
