@@ -12,12 +12,8 @@ const refs = {
   btnModalClose: document.querySelector('.modal-close'),
   filmInfoContainer: document.querySelector('.film-info-container'),
   filmModal: document.querySelector('.backdrop'),
-
   preloader: document.querySelector('.preloader'),
-
-
   titleFilm: document.querySelector('.photo-card-title'),
-
   myLibrary: document.getElementById('sign-in-status'),
   registrationBtn: document.getElementById('sign-in'),
   accountInfo: document.getElementById('account-details'),
