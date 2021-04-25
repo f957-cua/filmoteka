@@ -28,12 +28,14 @@
   line-height: 2;
   text-transform: uppercase;
   // text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
-  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 55px #fff, 0 0 75px #fff;
+  text-shadow: 0 0 5px $white, 0 0 10px $white, 0 0 15px $white, 0 0 20px $white,
+    0 0 30px $white, 0 0 40px, 0 0 55px $white, 0 0 75px $white;
   // background: #FFFFFF;
 }
 
-body.dark-theme .slider-title{
-  text-shadow: 0 0 5px #333, 0 0 10px #333, 0 0 15px #333, 0 0 20px #333, 0 0 30px #333, 0 0 40px #333, 0 0 55px #333, 0 0 75px #333;
+body.dark-theme .slider-title {
+  text-shadow: 0 0 5px $black 0 0 10px $black 0 0 15px $black 0 0 20px $black 0
+    0 30px $black 0 0 40px $black 0 0 55px $black 0 0 75px $black;
 }
 
 .card-slider.btn-slider {

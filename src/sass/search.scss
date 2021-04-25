@@ -12,25 +12,26 @@
   padding: 5px;
   width: 50%;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $black;
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: rgba(211, 211, 211, 0.7);
-  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(211, 211, 211, 0.7);
+  box-shadow: -10px 0px 13px -7px $black, 10px 0px 13px -7px $black,
+    5px 5px 15px 5px rgba(211, 211, 211, 0.7);
 }
-.input-search::placeholder { 
+.input-search::placeholder {
   font-weight: 500;
   color: rgb(51, 51, 51);
 }
-body.dark-theme .input-search::placeholder { 
-  color:#fff;
+body.dark-theme .input-search::placeholder {
+  color: $white;
 }
 
-  .btn-submit {
+.btn-submit {
   border: none;
   padding: 2px 4px;
-  background-color: rgba(255,255,255,0.4);
-  outline: 1px solid orangered;
+  background-color: rgba(255, 255, 255, 0.4);
+  outline: 1px solid $white;
   position: absolute;
   top: 27%;
   right: 20%;
