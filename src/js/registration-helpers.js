@@ -44,4 +44,4 @@ function noSignedUser() {
   refs.registrationBtn.removeEventListener('click', signOut);
 }
 
-export { signedUser, noSignedUser, onEscCloseRegModal }
+export { signedUser, noSignedUser, openCloseModal }
