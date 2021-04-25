@@ -25,14 +25,14 @@
   margin: auto 0;
   text-transform: uppercase;
   font-weight: bold;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff,
-    0 0 30px #fff, 0 0 40px #fff, 0 0 55px #fff, 0 0 75px #fff;
+  text-shadow: 0 0 5px $white, 0 0 10px $white, 0 0 15px $white, 0 0 20px $white,
+    0 0 30px $white, 0 0 40px $white, 0 0 55px $white, 0 0 75px $white;
 }
 body.dark-theme .logo,
 body.dark-theme .nav,
 body.dark-theme .registration-btn {
-  text-shadow: 0 0 5px #333, 0 0 10px #333, 0 0 15px #333, 0 0 20px #333,
-    0 0 30px #333, 0 0 40px #333, 0 0 55px #333, 0 0 75px #333;
+  text-shadow: 0 0 5px $gray, 0 0 10px $gray, 0 0 15px $gray, 0 0 20px $gray,
+    0 0 30px $gray, 0 0 40px $gray, 0 0 55px $gray, 0 0 75px $gray;
 }
 
 .logo > a {

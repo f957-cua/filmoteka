@@ -11,14 +11,14 @@
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 16px;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff,
-    0 0 30px #fff, 0 0 40px #fff, 0 0 55px #fff, 0 0 75px #fff;
+  text-shadow: 0 0 5px $white, 0 0 10px $white, 0 0 15px $white, 0 0 20px $white,
+    0 0 30px $white, 0 0 40px $white, 0 0 55px $white, 0 0 75px $white;
   background-color: transparent;
   border: none;
 }
 
 body.dark-theme .registration-btn {
-  color: #fff;
+  color: $white;
 }
 
 .user-img {

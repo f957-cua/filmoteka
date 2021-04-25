@@ -8,8 +8,8 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background: grey;
+  background: $gray;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: orangered;
+  background: $accent;
 }
