@@ -1,22 +1,13 @@
-import { ui, uiConfig, initApp, writeUserData, readUserData, openCloseModal } from './firebase';
+import { ui, uiConfig, initApp } from './firebase';
+import { openCloseModal } from './registration-helpers';
 import refs from './refs';
 import 'firebaseui/dist/firebaseui.css';
 
-refs.myLibrary.addEventListener('click', (e) => {
-  e.preventDefault();
-  if (refs.registrationBtn.textContent === 'Sign in') {
-    openCloseModal();
-    ui.start('#firebaseui-auth-container', uiConfig);
-    return;
-  }
-  readUserData();
-});
+window.addEventListener('load', () => initApp());
 
 refs.registrationBtn.addEventListener('click', () => {
   if (refs.registrationBtn.textContent === 'Sign out') return;
-   openCloseModal();
-   ui.start('#firebaseui-auth-container', uiConfig);
-});
- 
-window.addEventListener('load', () => initApp());
 
+  openCloseModal();
+  ui.start('#firebaseui-auth-container', uiConfig);
+});

@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
 import * as firebaseUi from 'firebaseui';
-import refs from './refs';
+import { signedUser, noSignedUser, openCloseModal } from './registration-helpers';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDCrVa6zpkJN0MnC22HGNcfi7vaIe8Op8M",
@@ -65,45 +65,6 @@ function signOut() {
   return firebase.auth().signOut()
 }
 
-function signedUser(url, name) {
-  refs.registrationBtn.textContent = 'Sign out';
-  refs.registrationBtn.style.marginRight = "0px";
-  refs.registrationBtn.addEventListener('click', signOut);
-  refs.accountInfo.insertAdjacentHTML("afterbegin",`<img  class="user-img" src= ${url} alt= ${name} width="48px">`);
-}
-
-function noSignedUser() {
-  refs.registrationBtn.textContent = 'Sign in';
-  refs.registrationBtn.style.marginRight = "60px";
-  refs.accountInfo.textContent = "";
-  refs.registrationBtn.removeEventListener('click', signOut);
-}
-
-function openCloseModal() {
-  refs.registrationModal.classList.toggle('is-hidden');
-  if (refs.registrationModal.classList.contains('is-hidden')) { 
-    window.removeEventListener('keydown', onEscCloseRegModal);
-    refs.registrationModal.querySelector('.modal-close')
-    .removeEventListener('click', openCloseModal);
-    refs.registrationModal.removeEventListener('click', onBdpRegClick);
-    return;
-  }
-    window.addEventListener('keydown', onEscCloseRegModal);
-    refs.registrationModal.querySelector('.modal-close')
-    .addEventListener('click', openCloseModal);
-    refs.registrationModal.addEventListener('click', onBdpRegClick);
-}
-
-function onBdpRegClick(e) {
-    if (e.target !== refs.registrationModal) {
-        return
-    }
-    openCloseModal()
-}
-
-function onEscCloseRegModal(e) {
-    if (e.code === 'Escape') openCloseModal()
-}
 
 function writeUserData(userId, name, email, imageUrl) {
   database.ref('users/' + userId).set({
@@ -126,4 +87,4 @@ function readUserData() {
 });
 }
 
-export { ui, uiConfig, initApp, writeUserData, readUserData, openCloseModal };
+export { ui, uiConfig, initApp, writeUserData, readUserData, signOut };
