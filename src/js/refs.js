@@ -12,16 +12,14 @@ const refs = {
   btnModalClose: document.querySelector('.modal-close'),
   filmInfoContainer: document.querySelector('.film-info-container'),
   filmModal: document.querySelector('.backdrop'),
-
   preloader: document.querySelector('.preloader'),
-
-
   titleFilm: document.querySelector('.photo-card-title'),
-
   myLibrary: document.getElementById('sign-in-status'),
   registrationBtn: document.getElementById('sign-in'),
   accountInfo: document.getElementById('account-details'),
   registrationModal:document.getElementById('registration-container'),
+  buttonAddToWatched: document.querySelector('.modal-button add-t-w'),
+  buttonAddToQueue: document.querySelector('.modal-button add-t-q'),
 };
 
 

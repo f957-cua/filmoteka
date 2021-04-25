@@ -66,12 +66,12 @@ function signOut() {
 }
 
 
-function writeUserData(userId, name, email, imageUrl) {
-  database.ref('users/' + userId).set({
-    username: name,
-    email: email,
-    profile_picture : imageUrl
-  });
+function writeUserData(library, filmInfoObj) {
+  const userId = firebase.auth().currentUser.uid;
+  const filmKey = filmInfoObj.id + '';
+  const update = {};
+  update[filmKey] = filmInfoObj;
+  database.ref('users/' + userId + library).update(update);
 }
 
 function readUserData() {

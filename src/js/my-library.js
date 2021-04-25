@@ -9,5 +9,7 @@ refs.myLibrary.addEventListener('click', (e) => {
     ui.start('#firebaseui-auth-container', uiConfig);
     return;
   }
+  refs.gallery.innerHTML = '';
   readUserData();
 });
+

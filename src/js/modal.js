@@ -1,6 +1,7 @@
 import refs from './refs';
 import apiService from './apiService';
 import filmInfo from '../templates/film-info.hbs';
+import { addListenerOnBtnModal } from './library-helpers';
 
 refs.gallery.addEventListener('click', onFilmCardClick)
 refs.btnModalClose.addEventListener('click', closeModal)
@@ -47,9 +48,9 @@ function onFilmCardClick(e) {
         if (!res.vote_count) {
             res.vote_count = dataVC
         }
-      refs.filmInfoContainer.innerHTML = filmInfo(res)  
-    }
-        )    
+        refs.filmInfoContainer.innerHTML = filmInfo(res);
+        return res;
+    }).then(addListenerOnBtnModal).catch(console.log);
     refs.filmModal.classList.remove('is-hidden');    
 }
 
@@ -60,8 +61,10 @@ function onSlideCardClick(e) {
         return
     }
     filmId = isCard.getAttribute('data-action')
-    apiService.getById(filmId).then((res) => 
-        refs.filmInfoContainer.innerHTML = filmInfo(res))    
+    apiService.getById(filmId).then((res) => {
+        refs.filmInfoContainer.innerHTML = filmInfo(res);
+        return res;
+    }).then(addListenerOnBtnModal).catch(console.log);
     refs.filmModal.classList.remove('is-hidden');    
 
 }
