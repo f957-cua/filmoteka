@@ -1,12 +1,19 @@
 import refs from './refs';
+checkPreloader();
 
-window.addEventListener('load', () => {
+function checkPreloader() {
     setTimeout(() => {
-        refs.preloader.classList.add('hidden');
-        setTimeout(() => {
-            refs.preloader.remove();
-        }, 2000);
-    
-    },500)
-})
+        if (sessionStorage.preload) {
+       refs.preloader.remove() ;
+  } else {
+    deletePreloader();
+  }
+    },700)
+}
 
+function deletePreloader() {
+  setTimeout(() => {
+    refs.preloader.remove();
+    sessionStorage.setItem('preload', 'done');
+  }, 3100);
+}
