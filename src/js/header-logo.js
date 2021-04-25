@@ -11,7 +11,7 @@ const onLogoClick = e => {
   refs.prevBtn.classList.add('js-by-trend-prev');
   refs.nextBtn.classList.add('js-by-trend-next');
   toggleCurrentLink(e);
-  changeGalleryToMyHome();
+  changeGalleryToMyHome(e);
   e.preventDefault();
   apiService.page = 1;
   apiService.getByTrend().then((results) => {
