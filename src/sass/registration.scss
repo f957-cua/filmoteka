@@ -6,7 +6,7 @@
 }
 
 .registration-btn {
-  padding: 0px 10px;
+  padding: 0px;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.2em;
@@ -14,26 +14,24 @@
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff,
     0 0 30px #fff, 0 0 40px #fff, 0 0 55px #fff, 0 0 75px #fff;
   background-color: transparent;
-  border-radius: 10px;
+  border: none;
 }
-body.dark-theme .registration-btn{
+
+body.dark-theme .registration-btn {
   color: #fff;
 }
 
-.registration-item {
-  margin-left: 15px;
-}
-
-.user {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
-}
-
 .user-img {
-  width: 50%;
+  border-radius: 50%;
+  margin-left: 15px;
 }
 
 .user-item {
   margin-left: 10px;
+}
+
+#registration-container .modal {
+  width: auto;
+  height: auto;
+  padding: 40px 0 0;
 }

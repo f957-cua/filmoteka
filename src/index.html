@@ -27,8 +27,7 @@
         background-size: cover;
       "
     >
-      <div class="preloader-icon">
-      </div>
+      <div class="preloader-icon"></div>
     </div>
     <header class="container">
       <div class="header">
@@ -39,40 +38,40 @@
           <a href="index.html">Filmoteka</a>
         </div>
         <div class="nav-reg">
-        <div class="nav">
-          <ul class="nav-list">
-            <li class="nav-item js-header-home">
-              <a
-                href="index.html"
-                class="current"
-                target="_blank"
-                rel="noopener noreferrer"
-                >home</a
-              >
+          <div class="nav">
+            <ul class="nav-list">
+              <li class="nav-item js-header-home">
+                <a
+                  href="index.html"
+                  class="current"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  id="sign-in-status"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >my library</a
+                >
+              </li>
+            </ul>
+          </div>
+          <ul class="registration">
+            <li class="registration-item">
+              <button
+                class="registration-btn"
+                type="button"
+                id="sign-in"
+              ></button>
             </li>
-            <li class="nav-item">
-              <a
-                id="sign-in-status"
-                href="./library.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                >my library</a
-              >
-            </li>
+            <li id="account-details" class="registration-item"></li>
           </ul>
         </div>
-        <ul class="registration">
-          <li class="registration-item">
-            <button
-              class="registration-btn"
-              type="button"
-              id="sign-in"
-            ></button>
-          </li>
-          <li id="account-details" class="registration-item"></li>
-        </ul>
       </div>
-    </div>
 
       <form class="search js-form" id="search">
         <input
@@ -170,16 +169,14 @@
         <button class="button js-btn-n js-by-trend-next">Next page</button>
       </div>
 
-
-    <div class="backdrop is-hidden">
-      <div class="modal">
-        <button class="modal-close">
-          <span class="close-modal-btn">&#10006;</span>
-        </button>
-        <div class="film-info-container">                  
-        </div>     
-       </div>
-     </div>
+      <div class="backdrop is-hidden">
+        <div class="modal">
+          <button class="modal-close">
+            <span class="close-modal-btn">&#10006;</span>
+          </button>
+          <div class="film-info-container"></div>
+        </div>
+      </div>
       <a
         href="#search"
         class="up-button"
@@ -188,8 +185,9 @@
         rel="noopener noreferrer"
       >
         <svg class="up-button-svg" width="35" height="35">
-          <use href="./images/sprite.svg#icon-circle-up"></use></svg>
-        </a>
+          <use href="./images/sprite.svg#icon-circle-up"></use>
+        </svg>
+      </a>
     </main>
 
     <footer class="footer">
