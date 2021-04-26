@@ -28,9 +28,7 @@ function onFilmCardClick(e) {
         addListenerOnBtnModal(res)
         return res.id
     }).then(id => {
-        console.log(id);
         apiService.getTrailerById(id).then(({ results }) => {
-            console.log(results);
             const imgRef = document.querySelector('.film-poster-wrapper');
             imgRef.addEventListener('click', e => {
                 const markup = trailerHbs(results[0])
