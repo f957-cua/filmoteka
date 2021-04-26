@@ -1,20 +1,35 @@
-import { writeUserData, readUserData  } from './firebase';
+import { writeUserData, readUserData, deleteUserData  } from './firebase';
 import { onClickBtnPopular, onClickBtnTopRated } from './gallery-section-filter';
 import refs from './refs';
 import galleryHbs from '../templates/gallery-list.hbs';
 
 function addListenerOnBtnModal(data) {
-  const buttonAddToWatched = document.querySelector('.add-t-w');
-  const buttonAddToQueue = document.querySelector('.add-t-q');
-  buttonAddToWatched.addEventListener('click', () => {
-    writeUserData('/watched', data);
-    buttonAddToWatched.disabled = true;
-    buttonAddToWatched.textContent = 'Added to Watched';
+  const buttonAddToWatchedRef = document.querySelector('.add-t-w');
+  const buttonAddToQueueRef = document.querySelector('.add-t-q');
+  const dataKey = data.id ?? data.title;
+   
+  checkDataChangeModalBtn(dataKey, buttonAddToWatchedRef, buttonAddToQueueRef);
+
+  buttonAddToWatchedRef.addEventListener('click', () => {
+    if (buttonAddToWatchedRef.textContent === 'add to watched') {
+      writeUserData('/watched', data);
+      buttonAddToWatchedRef.textContent = 'remove from watched';
+      return;
+    }
+
+    deleteUserData('/watched', dataKey);
+    buttonAddToWatchedRef.textContent = 'add to watched';
+
   });
-  buttonAddToQueue.addEventListener('click', () => {
-    writeUserData('/queue', data);
-    buttonAddToQueue.disabled = true;
-    buttonAddToQueue.textContent = 'Added to Queue'
+   
+  buttonAddToQueueRef.addEventListener('click', () => {
+    if (buttonAddToQueueRef.textContent === 'add to queue') {
+      writeUserData('/queue', data);
+      buttonAddToQueueRef.textContent = 'remove from queue';
+      return;
+    }
+    deleteUserData('/queue', dataKey);
+    buttonAddToQueueRef.textContent = 'add to queue';
   });
 }
 
@@ -25,7 +40,7 @@ function toggleCurrentLink(e) {
   }
 }
 
-function changeGalleryToMyLibrary() {
+function changeGalleryToMyLibrary(e) {
   refs.gallery.innerHTML = '';
   refs.gallery.nextElementSibling.style.display = 'none';
   refs.btnPopular.removeEventListener('click', onClickBtnPopular);
@@ -34,10 +49,10 @@ function changeGalleryToMyLibrary() {
   refs.btnTopRated.addEventListener('click', queue);
   refs.btnPopular.textContent = 'Watched';
   refs.btnTopRated.textContent = 'Queue';
+  toggleBtnActive(e);
 }
 
-
-function changeGalleryToMyHome() {
+function changeGalleryToMyHome(e) {
   refs.gallery.nextElementSibling.style.display = 'block';
   refs.btnPopular.addEventListener('click', onClickBtnPopular);
   refs.btnTopRated.addEventListener('click', onClickBtnTopRated);
@@ -45,6 +60,8 @@ function changeGalleryToMyHome() {
   refs.btnTopRated.removeEventListener('click', queue);
   refs.btnPopular.textContent = 'popular';
   refs.btnTopRated.textContent = 'top rated';
+  refs.btnPopular.classList.toggle('active');
+  toggleBtnActive(e);
 }
 
 function myLibraryRendering(library) {
@@ -54,15 +71,56 @@ function myLibraryRendering(library) {
   .catch(error => console.log(error));
 }
 
-function watched() {
-  myLibraryRendering('/watched')
+function watched(e) {
+  myLibraryRendering('/watched');
+  toggleBtnActive(e);
 }
 
-function queue() {
-  myLibraryRendering('/queue')
+function queue(e) {
+  myLibraryRendering('/queue');
+  toggleBtnActive(e);
+}
+
+function toggleBtnActive(e) {
+  if (!e.target.classList.contains('active')) {
+    refs.btnPopular.classList.toggle('active');
+    refs.btnTopRated.classList.toggle('active');
+  }
+  if (e.target === refs.home.firstElementChild || e.target === refs.myLibrary) {
+    refs.btnPopular.classList.add('active');
+    refs.btnTopRated.classList.remove('active');
+  }
+}
+
+function checkDataChangeModalBtn(key,btn1Ref, brn2Ref) {
+  const checkDataWatched = async () => await readUserData('/watched');
+  const checkDataQueue = async () => await readUserData('/queue');
+
+  checkDataWatched().then(rez => {
+    if (rez&&rez[key]) {
+      btn1Ref.textContent = 'remove from watched';
+    }
+  });
+  checkDataQueue().then(rez => {
+    if (rez&&rez[key]) {
+      brn2Ref.textContent = 'remove from queue';
+    }
+  });  
+}
+
+function renderLibraryOnCloseModal() {
+  if (refs.btnPopular.classList.contains('active')
+    && refs.btnPopular.textContent === 'Watched') {
+  myLibraryRendering('/watched');
+}
+  if (refs.btnTopRated.classList.contains('active')
+  && refs.btnTopRated.classList.textContent === 'Queue') {
+  myLibraryRendering('/queue');
+}
+  
 }
 
 export {
   addListenerOnBtnModal, toggleCurrentLink, changeGalleryToMyLibrary,
-  changeGalleryToMyHome, myLibraryRendering
-}
+  changeGalleryToMyHome, myLibraryRendering, toggleBtnActive,
+  renderLibraryOnCloseModal }

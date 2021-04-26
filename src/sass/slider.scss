@@ -50,6 +50,7 @@ body.dark-theme .slider-title {
 .card-slider {
   margin-right: 8px;
   width: 123.203px;
+  transition: transform 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .card-slider:hover {
   transform: scale(0.95);

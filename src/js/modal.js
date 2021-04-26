@@ -1,7 +1,7 @@
 import refs from './refs';
 import apiService from './apiService';
 import filmInfo from '../templates/film-info.hbs';
-import { addListenerOnBtnModal } from './library-helpers';
+import { addListenerOnBtnModal, renderLibraryOnCloseModal } from './library-helpers';
 import trailerHbs from '../templates/trailer.hbs'
 
 refs.gallery.addEventListener('click', onFilmCardClick)
@@ -62,7 +62,8 @@ function onFilmCardClick(e) {
         const isClosed = refs.filmModal.classList.contains('is-hidden')
         if (isClosed || !refs.trailerBackdrop.classList.contains('is-close')) {
             return
-        }
+      }
+        renderLibraryOnCloseModal();
         document.body.style.overflow = 'visible';
         return refs.filmModal.classList.add('is-hidden')
     }

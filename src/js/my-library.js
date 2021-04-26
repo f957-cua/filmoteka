@@ -10,8 +10,7 @@ refs.myLibrary.addEventListener('click', (e) => {
     ui.start('#firebaseui-auth-container', uiConfig);
     return;
   }
-  changeGalleryToMyLibrary();
+  changeGalleryToMyLibrary(e);
   toggleCurrentLink(e);
   myLibraryRendering('/watched');
 });
-
