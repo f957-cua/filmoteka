@@ -18,42 +18,8 @@ function onFilmCardClick(e) {
     if (!isCard) {
         return
     }
-    let filmId = isCard.getAttribute('data')
-    let dataImg = isCard.getAttribute('data-img')
-    let dataTitle = isCard.getAttribute('data-title')
-    let dataPop = isCard.getAttribute('data-pop')
-    let dataVA = isCard.getAttribute('data-v_a')
-    let dataVC = isCard.getAttribute('data-v_c')
-    let dataOverview = isCard.getAttribute('data-overview')
-    let dataGenres = isCard.getAttribute('data-genres')
-
-    apiService.getById(filmId).then((res) => {
-        if (!res.poster_path) {
-            res.poster_path = dataImg
-        }
-        if (!res.title) {
-            res.title = dataTitle
-        }
-        if (!res.popularity) {
-            res.popularity = dataPop
-        }
-        if (!res.original_title) {
-            res.original_title = dataTitle
-        }
-        if (!res.overview) {
-            res.overview = dataOverview
-        }
-        if (!res.vote_average) {
-            res.vote_average = dataVA
-        }
-        if (!res.vote_count) {
-            res.vote_count = dataVC
-        }
-
-        if (!res.genres) {
-            res.genres = dataGenres.split(' ').map(el => {return {name: el}})
-        }
-      
+    apiService.getById(filmId).then((res) => {        
+      modalValidation(res)
         refs.filmInfoContainer.innerHTML = filmInfo(res);
         return res;
     }).then(addListenerOnBtnModal).catch(console.log);
@@ -69,8 +35,8 @@ function onSlideCardClick(e) {
         return
     }
     filmId = isCard.getAttribute('data-action')
-
     apiService.getById(filmId).then((res) => {
+        modalValidation(res)
         refs.filmInfoContainer.innerHTML = filmInfo(res);
         return res;
     }).then(addListenerOnBtnModal).catch(console.log);
@@ -100,3 +66,39 @@ function onEscCloseModal(evt) {
         return closeModal()
     }
 }
+
+function modalValidation(res) {
+    let filmId = isCard.getAttribute('data')
+    let dataImg = isCard.getAttribute('data-img')
+    let dataTitle = isCard.getAttribute('data-title')
+    let dataPop = isCard.getAttribute('data-pop')
+    let dataVA = isCard.getAttribute('data-v_a')
+    let dataVC = isCard.getAttribute('data-v_c')
+    let dataOverview = isCard.getAttribute('data-overview')
+    let dataGenres = isCard.getAttribute('data-genres')
+        if (!res.poster_path) {
+            res.poster_path = dataImg
+        }
+        if (!res.title) {
+            res.title = dataTitle
+        }
+        if (!res.popularity) {
+            res.popularity = dataPop
+        }
+        if (!res.original_title) {
+            res.original_title = dataTitle
+        }
+        if (!res.overview) {
+            res.overview = dataOverview
+        }
+        if (!res.vote_average) {
+            res.vote_average = dataVA
+        }
+        if (!res.vote_count) {
+            res.vote_count = dataVC
+        }
+
+        if (!res.genres) {
+            res.genres = dataGenres.split(' ').map(el => {return {name: el}})
+        }
+ }
