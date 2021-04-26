@@ -22,14 +22,10 @@ const uiConfig = {
     signInSuccessWithAuthResult: function (authResult) {
       openCloseModal();
       // User successfully signed in.
-      // Return type determines whether we continue the redirect automatically
-      // or whether we leave that to developer to handle.
       return false;
     },
-    uiShown: function() {
-      // The widget is rendered.
-      // Hide the loader.
-      // document.getElementById('loader').style.display = 'none';
+    uiShown: function () {
+            // The widget is rendered.
     }
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
@@ -63,7 +59,8 @@ function initApp() {
 }
 
 function signOut() {
-  return firebase.auth().signOut()
+  firebase.auth().signOut();
+  document.getElementById('home').click();
 }
 
 function writeUserData(library, filmInfoObj) {
