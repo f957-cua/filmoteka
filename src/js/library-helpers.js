@@ -108,7 +108,19 @@ function checkDataChangeModalBtn(key,btn1Ref, brn2Ref) {
   });  
 }
 
+function renderLibraryOnCloseModal() {
+  if (refs.btnPopular.classList.contains('active')
+    && refs.btnPopular.textContent === 'Watched') {
+  myLibraryRendering('/watched');
+}
+  if (refs.btnTopRated.classList.contains('active')
+  && refs.btnTopRated.classList.textContent === 'Queue') {
+  myLibraryRendering('/queue');
+}
+  
+}
+
 export {
   addListenerOnBtnModal, toggleCurrentLink, changeGalleryToMyLibrary,
-  changeGalleryToMyHome, myLibraryRendering,  toggleBtnActive
-}
+  changeGalleryToMyHome, myLibraryRendering, toggleBtnActive,
+  renderLibraryOnCloseModal }

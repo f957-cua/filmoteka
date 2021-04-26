@@ -1,7 +1,7 @@
 import refs from './refs';
 import apiService from './apiService';
 import filmInfo from '../templates/film-info.hbs';
-import { addListenerOnBtnModal } from './library-helpers';
+import { addListenerOnBtnModal, renderLibraryOnCloseModal } from './library-helpers';
 
 refs.gallery.addEventListener('click', onFilmCardClick)
 refs.btnModalClose.addEventListener('click', closeModal)
@@ -74,6 +74,7 @@ function closeModal() {
     if (isClosed) {
         return
     }
+    renderLibraryOnCloseModal();
     return refs.filmModal.classList.add('is-hidden')
 }
 

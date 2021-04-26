@@ -14,4 +14,3 @@ refs.myLibrary.addEventListener('click', (e) => {
   toggleCurrentLink(e);
   myLibraryRendering('/watched');
 });
-
