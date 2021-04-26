@@ -115,6 +115,10 @@ export default {
     return results
     },
   
+  getTrailerById (id) {
+    const url = `${MAIN_URL}movie/${id}/videos?api_key=${KEY}&language=en-US`;
+   return fetch(url).then(response => response.json());
+  },
 
   incrementPage() {
     return (this.page += 1);

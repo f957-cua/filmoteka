@@ -15,5 +15,5 @@ function deletePreloader() {
   setTimeout(() => {
     refs.preloader.remove();
     sessionStorage.setItem('preload', 'done');
-  }, 3100);
+  }, 2100);
 }
