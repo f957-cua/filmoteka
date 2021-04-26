@@ -28,7 +28,7 @@
   height: 100vh;
   min-width: 280px;
   width: 90%;
-  overflow: auto;
+  overflow: auto;  
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -54,7 +54,7 @@ body.light-theme .modal {
 }
 
 body.dark-theme .modal {
-  color: #fff;
+  color: $white;
   background-color: #11061b;
   box-shadow: 5px 5px 15px 5px #380e0e;
 }
@@ -64,8 +64,8 @@ body.dark-theme .modal {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  color: #ff6b01;
-  background-color: #fff;
+  color: $accent;
+  background-color: $white;
   min-width: 30px;
   min-height: 30px;
   top: 10px;
@@ -76,13 +76,13 @@ body.dark-theme .modal {
 }
 
 body.light-theme .modal-close {
-  background-color: #dbd1d1;
+  background-color: $white-theme-cards-bg;
   box-shadow: 1px 1px 20px 1px #ab8ac0;
 }
 
 body.dark-theme .modal-close {
-  color: #ff6b01;
-  background-color: #11061b;
+  color: $accent;
+  background-color: $dark-theme-cards-bg;
   box-shadow: 5px 5px 15px 5px #380e0e;
 }
 
@@ -141,7 +141,7 @@ body.dark-theme .modal-close {
   font-size: 20px;
   line-height: 1.15;
   text-transform: uppercase;
-  color: #ff6b01;
+  color: $accent;
   margin-top: 30px;
   margin-bottom: 20px;
   @media screen and (min-width: 1200px) {
@@ -181,8 +181,8 @@ body.dark-theme .modal-close {
     display: inline-block;
     align-items: center;
     text-align: center;
-    color: #fff;
-    background: #ff6b01;
+    color: $white;
+    background: $accent;
     border-radius: 5px;
   }
 }
@@ -190,7 +190,7 @@ body.dark-theme .modal-close {
 .film-descr-itm {
   font-size: 12px;
   line-height: 1.33;
-  color: #8c8c8c;
+  color: $accent;
   margin-bottom: 10px;
 }
 
@@ -211,15 +211,15 @@ body.dark-theme .modal-close {
   text-transform: uppercase;
   cursor: pointer;
   &.add-t-w {
-    background: #ff6b01;
+    background: $accent;
     border: 0;
     outline: 0;
   }
   &.add-t-q {
     margin-left: 15px;
-    border: 1px solid #000000;
+    border: 1px solid $black;
     box-sizing: border-box;
-    background: #fff;
+    background: $white;
   }
 }
 
@@ -252,14 +252,14 @@ body.dark-theme .modal-close {
   line-height: 1.33;
   text-align: inherit;
   text-transform: uppercase;
-  color: #ff6b01;
+  color: $accent;
   margin-top: 20px;
   @media screen and (min-width: 1200px) {
   }
 }
 
 .close-modal-btn {
-  color: orangered;
+  color: $accent;
   font-weight: 700;
   font-size: 20px;
 }

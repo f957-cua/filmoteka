@@ -18,3 +18,4 @@ function onClickBtnTopRated() {
     refs.gallery.innerHTML = galleryHbs(results);
   });
 }
+ export { onClickBtnPopular, onClickBtnTopRated }
