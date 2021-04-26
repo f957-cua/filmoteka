@@ -42,7 +42,7 @@ function onFilmCardClick(e) {
         })
     }).catch(console.log);
     refs.filmModal.classList.remove('is-hidden');
-
+}
     function onSlideCardClick(e) {
         refs.filmInfoContainer.innerHTML = ''
         isCard = e.target.closest('.card-slider');
@@ -132,4 +132,3 @@ function onFilmCardClick(e) {
             res.genres = dataGenres.split(' ').map(el => { return { name: el } })
         }
     }
-}
