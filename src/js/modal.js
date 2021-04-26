@@ -2,6 +2,7 @@ import refs from './refs';
 import apiService from './apiService';
 import filmInfo from '../templates/film-info.hbs';
 import { addListenerOnBtnModal } from './library-helpers';
+import trailerHbs from '../templates/trailer.hbs'
 
 refs.gallery.addEventListener('click', onFilmCardClick)
 refs.btnModalClose.addEventListener('click', closeModal)
@@ -50,7 +51,23 @@ function onFilmCardClick(e) {
         }
         refs.filmInfoContainer.innerHTML = filmInfo(res);
         return res;
-    }).then(addListenerOnBtnModal).catch(console.log);
+    }).then(res => {
+        addListenerOnBtnModal(res)
+        return res.id
+    }).then(id => {
+        console.log(id);
+        apiService.getTrailerById(id).then(({ results }) => {
+            console.log(results);
+            const imgRef = document.querySelector('.film-poster-wrapper');
+            imgRef.addEventListener('click', e => {
+                const markup = trailerHbs(results[0])
+                refs.trailerModal.innerHTML = markup
+                refs.trailerModal.classList.remove('is-close')
+                refs.trailerBackdrop.classList.remove('is-close')
+
+            })
+        })
+    }).catch(console.log);
     refs.filmModal.classList.remove('is-hidden');    
 }
 
@@ -71,7 +88,7 @@ function onSlideCardClick(e) {
 
 function closeModal() {
     const isClosed = refs.filmModal.classList.contains('is-hidden')
-    if (isClosed) {
+    if (isClosed || !refs.trailerBackdrop.classList.contains('is-close')) {
         return
     }
     return refs.filmModal.classList.add('is-hidden')
@@ -89,3 +106,17 @@ function onEscCloseModal(evt) {
         return closeModal()
     }
 }
+function closeTrailerModal () {
+    refs.trailerBackdrop.classList.add('is-close')
+        refs.trailerModal.innerHTML = '';
+    
+}
+
+function onCloseTrailerModal(e) {
+    if (e.code === 'Escape' || e.target.classList.contains('js-trailer-backdrop')) {
+        closeTrailerModal()
+    }
+}
+window.addEventListener('keydown', onCloseTrailerModal)
+
+refs.trailerBackdrop.addEventListener('click', onCloseTrailerModal)

@@ -17,7 +17,11 @@ const refs = {
   myLibrary: document.getElementById('sign-in-status'),
   registrationBtn: document.getElementById('sign-in'),
   accountInfo: document.getElementById('account-details'),
-  registrationModal:document.getElementById('registration-container'),
+  registrationModal: document.getElementById('registration-container'),
+  test: document.querySelector('.test'),
+  trailerModal: document.querySelector('.js-trailer-modal'),
+  trailerBackdrop: document.querySelector('.js-trailer-backdrop'),
+  backdrop: document.querySelector('.backdrop'),
 };
 
 

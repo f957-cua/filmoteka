@@ -1,3 +1,4 @@
+import './js/preloader';
 import './js/header-logo';
 import './js/header-finder';
 import './js/switch-theme';
@@ -9,6 +10,6 @@ import './js/gallery-section-filter';
 import './js/toTop';
 import './js/galeery-pagination';
 import './js/modal';
-import './js/preloader';
+import './js/trailer';
 
 import '../src/sass/main.scss';
