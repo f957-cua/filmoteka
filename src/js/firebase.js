@@ -22,14 +22,10 @@ const uiConfig = {
     signInSuccessWithAuthResult: function (authResult) {
       openCloseModal();
       // User successfully signed in.
-      // Return type determines whether we continue the redirect automatically
-      // or whether we leave that to developer to handle.
       return false;
     },
-    uiShown: function() {
-      // The widget is rendered.
-      // Hide the loader.
-      // document.getElementById('loader').style.display = 'none';
+    uiShown: function () {
+            // The widget is rendered.
     }
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
@@ -46,7 +42,8 @@ const uiConfig = {
   tosUrl: 'https://www.termsfeed.com/live/6606e203-ca11-437b-b584-e1765cda9c0e>',
   // Privacy policy url.
   privacyPolicyUrl: 'https://www.privacypolicies.com/live/5a40fc7e-8fd2-4cd0-8754-e6ebf6281fb4'
-};
+}
+
 function initApp() {
         firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
@@ -59,25 +56,25 @@ function initApp() {
         }, function(error) {
           console.log(error);
         });
-};
-
-function signOut() {
-  return firebase.auth().signOut()
 }
 
+function signOut() {
+  firebase.auth().signOut();
+  document.getElementById('home').click();
+}
 
 function writeUserData(library, filmInfoObj) {
   const userId = firebase.auth().currentUser.uid;
-  const filmKey = filmInfoObj.id ?? Math.round(Math.random()*1000000);
+  const filmKey = filmInfoObj.id ?? filmInfoObj.title;
   const update = {};
   update[filmKey] = filmInfoObj;
   database.ref('users/' + userId + library).update(update);
-}
+  }
 
 function readUserData(library) {
   const userId = firebase.auth().currentUser.uid;
- return database.ref('users/' + userId + library).get().then((snapshot) => {
-  if (snapshot.exists()) {
+  return database.ref('users/' + userId + library).get().then((snapshot) => {
+   if (snapshot.exists()) {
     return snapshot.val()
   } else {
     console.log("No data available");
@@ -87,4 +84,9 @@ function readUserData(library) {
 });
 }
 
-export { ui, uiConfig, initApp, writeUserData, readUserData, signOut };
+function deleteUserData(library, dataId) {
+  const userId = firebase.auth().currentUser.uid;
+  database.ref('users/' + userId + library + '/' + dataId).remove();
+}
+
+export { ui, uiConfig, initApp, writeUserData, readUserData, deleteUserData, signOut };
