@@ -18,6 +18,7 @@ function onFilmCardClick(e) {
     if (!isCard) {
         return
     }
+    filmId = isCard.getAttribute('data')
     apiService.getById(filmId).then((res) => {        
       modalValidation(res)
         refs.filmInfoContainer.innerHTML = filmInfo(res);
@@ -68,7 +69,6 @@ function onEscCloseModal(evt) {
 }
 
 function modalValidation(res) {
-    let filmId = isCard.getAttribute('data')
     let dataImg = isCard.getAttribute('data-img')
     let dataTitle = isCard.getAttribute('data-title')
     let dataPop = isCard.getAttribute('data-pop')
