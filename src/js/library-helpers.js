@@ -114,7 +114,7 @@ function renderLibraryOnCloseModal() {
   myLibraryRendering('/watched');
 }
   if (refs.btnTopRated.classList.contains('active')
-  && refs.btnTopRated.classList.textContent === 'Queue') {
+  && refs.btnTopRated.textContent === 'Queue') {
   myLibraryRendering('/queue');
 }
   
