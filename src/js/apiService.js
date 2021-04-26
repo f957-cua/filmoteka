@@ -88,7 +88,7 @@ export default {
   releaseDateValidation(results) {
     return results.forEach(item => {
       if (!item.release_date) {
-      return item.release_date = '2077-01-02'        
+      return item.release_date = '2077'        
       }
       item.release_date = item.release_date.slice(0, 4)
     })
