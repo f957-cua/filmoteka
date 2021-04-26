@@ -25,6 +25,7 @@ function onFilmCardClick(e) {
     let dataVA = isCard.getAttribute('data-v_a')
     let dataVC = isCard.getAttribute('data-v_c')
     let dataOverview = isCard.getAttribute('data-overview')
+    let dataGenres = isCard.getAttribute('data-genres')
 
     apiService.getById(filmId).then((res) => {
         if (!res.poster_path) {
@@ -48,10 +49,17 @@ function onFilmCardClick(e) {
         if (!res.vote_count) {
             res.vote_count = dataVC
         }
+
+        if (!res.genres) {
+            res.genres = dataGenres.split(' ').map(el => {return {name: el}})
+        }
+      
         refs.filmInfoContainer.innerHTML = filmInfo(res);
         return res;
     }).then(addListenerOnBtnModal).catch(console.log);
-    refs.filmModal.classList.remove('is-hidden');    
+    refs.filmModal.classList.remove('is-hidden');  
+    document.body.style.overflow = 'hidden';  
+
 }
 
 function onSlideCardClick(e) {
@@ -61,11 +69,13 @@ function onSlideCardClick(e) {
         return
     }
     filmId = isCard.getAttribute('data-action')
+
     apiService.getById(filmId).then((res) => {
         refs.filmInfoContainer.innerHTML = filmInfo(res);
         return res;
     }).then(addListenerOnBtnModal).catch(console.log);
-    refs.filmModal.classList.remove('is-hidden');    
+    refs.filmModal.classList.remove('is-hidden');
+    document.body.style.overflow = 'hidden';
 
 }
 
@@ -74,6 +84,7 @@ function closeModal() {
     if (isClosed) {
         return
     }
+     document.body.style.overflow = 'visible';
     return refs.filmModal.classList.add('is-hidden')
 }
 
