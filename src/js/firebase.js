@@ -87,4 +87,10 @@ function readUserData(library) {
 });
 }
 
-export { ui, uiConfig, initApp, writeUserData, readUserData, signOut };
+function deleteUserData(library, dataId) {
+  const userId = firebase.auth().currentUser.uid;
+  database.ref('users/' + userId + library + '/' + dataId).remove();
+  console.log("ok");
+}
+
+export { ui, uiConfig, initApp, writeUserData, readUserData, deleteUserData, signOut };

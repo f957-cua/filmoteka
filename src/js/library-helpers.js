@@ -1,4 +1,4 @@
-import { writeUserData, readUserData  } from './firebase';
+import { writeUserData, readUserData, deleteUserData  } from './firebase';
 import { onClickBtnPopular, onClickBtnTopRated } from './gallery-section-filter';
 import refs from './refs';
 import galleryHbs from '../templates/gallery-list.hbs';
@@ -14,7 +14,7 @@ function addListenerOnBtnModal(data) {
         buttonAddToWatched.textContent = 'Remove from Watched';
         return;
       }
-      // writeUserData('/watched', null);     
+      deleteUserData('/watched', data.id);
       buttonAddToWatched.textContent = 'Add to Watched';
 
      })
