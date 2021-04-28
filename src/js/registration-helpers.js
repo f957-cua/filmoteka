@@ -31,14 +31,16 @@ function onEscCloseRegModal(e) {
 }
 
 function signedUser(url, name) {
-  refs.registrationBtn.textContent = 'Sign out';
+  refs.registrationBtn.textContent = '';
+  refs.registrationBtn.insertAdjacentHTML('afterbegin', '<svg class="registration-icon besom-broom" role="img" aria-label="Иконка метлы" width="48" height="48"><use href="./images/sprite.svg#besom-broom"></use></svg>');
   refs.registrationBtn.style.marginRight = "0px";
   refs.registrationBtn.addEventListener('click', signOut);
   refs.accountInfo.insertAdjacentHTML("afterbegin",`<img  class="user-img" src= ${url} alt= ${name} width="48px">`);
 }
 
 function noSignedUser() {
-  refs.registrationBtn.textContent = 'Sign in';
+  refs.registrationBtn.textContent = '';
+  refs.registrationBtn.insertAdjacentHTML('afterbegin', '<svg class="registration-icon" role="img" aria-label="Иконка магической шляпы" width="48" height="48"><use href="./images/sprite.svg#sorting-hat"></use></svg>');
   refs.registrationBtn.style.marginRight = "60px";
   refs.accountInfo.textContent = "";
   refs.registrationBtn.removeEventListener('click', signOut);

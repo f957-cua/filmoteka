@@ -17,6 +17,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const ui = new firebaseUi.auth.AuthUI(firebase.auth());
 const database = firebase.database();
+
 const uiConfig = {
   callbacks: {
     signInSuccessWithAuthResult: function (authResult) {
