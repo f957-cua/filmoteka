@@ -38,6 +38,10 @@ function toggleCurrentLink(e) {
     refs.myLibrary.classList.toggle('current');
     refs.home.firstElementChild.classList.toggle('current')
   }
+  if (e.currentTarget.classList.contains('logo')) {
+    refs.home.firstElementChild.classList.add('current');
+    refs.myLibrary.classList.remove('current');
+  }
 }
 
 function changeGalleryToMyLibrary(e) {
@@ -60,9 +64,13 @@ function changeGalleryToMyHome(e) {
   refs.btnTopRated.removeEventListener('click', queue);
   refs.btnPopular.textContent = 'popular';
   refs.btnTopRated.textContent = 'top rated';
-  refs.btnPopular.classList.toggle('active');
+  // if (e.currentTarget.classList.contains('logo')) {
+  //   console.log(e.currentTarget);
+  //   return;
+  // }
+  // refs.btnPopular.classList.toggle('active');
   toggleBtnActive(e);
-}
+ }
 
 function myLibraryRendering(library) {
   readUserData(library).then((results) => {
@@ -86,7 +94,7 @@ function toggleBtnActive(e) {
     refs.btnPopular.classList.toggle('active');
     refs.btnTopRated.classList.toggle('active');
   }
-  if (e.target === refs.home.firstElementChild || e.target === refs.myLibrary) {
+  if (e.target === refs.home.firstElementChild || e.target === refs.myLibrary || e.currentTarget.classList.contains('logo')) {
     refs.btnPopular.classList.add('active');
     refs.btnTopRated.classList.remove('active');
   }

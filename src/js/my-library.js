@@ -5,7 +5,7 @@ import refs from './refs';
 
 refs.myLibrary.addEventListener('click', (e) => {
   e.preventDefault();
-  if (refs.registrationBtn.textContent === 'Sign in') {
+  if (!refs.registrationBtn.firstElementChild.classList.contains('besom-broom')) {
     openCloseModal();
     ui.start('#firebaseui-auth-container', uiConfig);
     return;
