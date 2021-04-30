@@ -64,11 +64,6 @@ function changeGalleryToMyHome(e) {
   refs.btnTopRated.removeEventListener('click', queue);
   refs.btnPopular.textContent = 'popular';
   refs.btnTopRated.textContent = 'top rated';
-  // if (e.currentTarget.classList.contains('logo')) {
-  //   console.log(e.currentTarget);
-  //   return;
-  // }
-  // refs.btnPopular.classList.toggle('active');
   toggleBtnActive(e);
  }
 
@@ -90,12 +85,24 @@ function queue(e) {
 }
 
 function toggleBtnActive(e) {
-  if (!e.target.classList.contains('active')) {
-    refs.btnPopular.classList.toggle('active');
-    refs.btnTopRated.classList.toggle('active');
-  }
-  if (e.target === refs.home.firstElementChild || e.target === refs.myLibrary || e.currentTarget.classList.contains('logo')) {
+  if (e.target === refs.btnPopular) {
     refs.btnPopular.classList.add('active');
+    refs.btnTopRated.classList.remove('active');
+  }
+  if (e.target === refs.btnTopRated) {
+    refs.btnPopular.classList.remove('active');
+    refs.btnTopRated.classList.add('active');
+  }
+  if (e.target === refs.home.firstElementChild ) {
+    refs.btnPopular.classList.remove('active');
+    refs.btnTopRated.classList.remove('active');
+  }
+  if (e.target === refs.myLibrary) {
+    refs.btnPopular.classList.add('active');
+    refs.btnTopRated.classList.remove('active');
+  }
+  if (e.currentTarget.classList.contains('logo')) {
+    refs.btnPopular.classList.remove('active');
     refs.btnTopRated.classList.remove('active');
   }
 }
