@@ -127,7 +127,7 @@ body.dark-theme .modal-close {
 }
 
 .film-poster-wrapper {
-  width: 240px;
+  width: 100%;
   height: auto;
   @media screen and (min-width: 1200px) {
     width: 396px;
@@ -207,6 +207,7 @@ body.dark-theme .modal-close {
 .button-add-container {
   display: flex;
   align-items: center;
+  margin-top: 20px;
 }
 
 .modal-button {
