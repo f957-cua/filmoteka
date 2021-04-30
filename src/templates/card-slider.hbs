@@ -1,6 +1,8 @@
 {{#each this}}
 
-<div class="card-slider" data-action='{{id}}'>
+<div class="card-slider" data-action="{{id}}" data-img="{{poster_path}}" data-title="{{original_title}}"
+    data-pop="{{popularity}}" data-v_a="{{vote_average}}" data-v_c="{{vote_count}}" data-overview="{{overview}}"
+    data-genres="{{genre_ids}}">
     <div class="thumbe">
         <div class="btn-id">
             {{!-- <button data-id='{{id}}' class="btn-slider">
